@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUVI Studio | Synthetic Cinema & Creative Direction</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Paleta de Colores y Variables */
+        :root {
+            --bg-dark: #142920; /* Verde Bosque */
+            --text-light: #f4f0e6; /* Beige Cálido */
+            --accent-gold: #d9c8aa; /* Dorado */
+        }
+        
+        /* Reseteo y Estilos Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+        
+        /* Contenedor Principal */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 1px solid rgba(217, 200, 170, 0.2);
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; letter-spacing: 2px; }
+        .hero .en-title { color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 20px; font-weight: 700; }
+        .hero p { max-width: 600px; font-size: 1.1rem; margin-bottom: 10px; }
+        .hero .en-text { color: var(--accent-gold); font-size: 1rem; margin-bottom: 40px; font-style: italic; }
+        
+        /* Botones */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: transparent;
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-dark);
+        }
+
+        /* Secciones Generales */
+        .section { padding: 100px 0; border-bottom: 1px solid rgba(217, 200, 170, 0.2); }
+        .section-title { font-size: 2.5rem; margin-bottom: 5px; }
+        .section-subtitle { color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 50px; }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .project-card { background: rgba(255,255,255,0.02); padding: 20px; border: 1px solid rgba(217, 200, 170, 0.1); }
+        .project-img {
+            width: 100%;
+            height: 250px;
+            background-color: #000;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .project-title { font-size: 1.2rem; margin-bottom: 15px; letter-spacing: 1px; }
+        .project-desc { font-size: 0.95rem; margin-bottom: 10px; }
+        .project-desc-en { color: var(--accent-gold); font-size: 0.85rem; font-style: italic; margin-bottom: 20px; }
+
+        /* Footer */
+        .footer { padding: 80px 0; text-align: center; }
+        .footer h2 { font-size: 2rem; margin-bottom: 20px; color: var(--accent-gold); }
+        .footer a { color: var(--text-light); text-decoration: none; margin: 0 10px; transition: color 0.3s; }
+        .footer a:hover { color: var(--accent-gold); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .en-title { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero container">
+        <!-- Acá podés poner una etiqueta <img> con tu logo si querés -->
+        <h1>Cine Sintético & Dirección Creativa</h1>
+        <div class="en-title">SYNTHETIC CINEMA & CREATIVE DIRECTION</div>
+        <p>Comerciales, Brand Films y visuales imposibles impulsados por IA y rigor de postproducción.</p>
+        <p class="en-text">Commercials, Brand Films, and impossible visuals driven by AI and post-production rigor.</p>
+        <a href="mailto:franco@ruvistudio.com" class="btn">START A PROJECT</a>
+    </header>
+
+    <!-- MANIFIESTO -->
+    <section class="section container">
+        <h2 class="section-title">Nuestra Visión</h2>
+        <div class="section-subtitle">OUR VISION</div>
+        <p>No generamos videos al azar. En RUVI combinamos la velocidad y el infinito potencial de la IA generativa con el criterio de montaje, el color y el diseño sonoro de la industria tradicional. El resultado: impacto cinematográfico a una fracción del costo de un rodaje físico.</p>
+        <br>
+        <p style="color: var(--accent-gold); font-style: italic;">We don't generate random videos. At RUVI, we combine the speed and endless potential of generative AI with the editing craft, color grading, and sound design of the traditional industry. The result: cinematic impact at a fraction of the cost of a physical shoot.</p>
+    </section>
+
+    <!-- PORTFOLIO / CASOS DE ESTUDIO -->
+    <section class="section container">
+        <h2 class="section-title">Casos de Estudio</h2>
+        <div class="section-subtitle">SELECTED WORK</div>
+        
+        <div class="portfolio-grid">
+            
+            <!-- PROYECTO 1: VUZ -->
+            <div class="project-card">
+                <!-- Reemplazar 'vuz-foto.jpg' por el nombre exacto de tu archivo cuando lo subas -->
+                <img src="vuz-foto.jpg" alt="VUZ Soda" class="project-img">
+                <h3 class="project-title">VUZ SODA | Reel Comercial</h3>
+                <p class="project-desc">Un viaje a los 80s impulsado 100% por IA. Exploración de estética urbana, consistencia de producto y creación de jingle sintético.</p>
+                <p class="project-desc-en">A 100% AI-driven trip to the 80s. An exploration of urban aesthetics, product consistency, and synthetic jingle creation.</p>
+                <!-- Poner el link de tu video oculto de YouTube en el href -->
+                <a href="LINK_YOUTUBE_VUZ" target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.8rem;">WATCH REEL</a>
+            </div>
+
+            <!-- PROYECTO 2: SAMURAI -->
+            <div class="project-card">
+                <img src="samurai-foto.jpg" alt="Samurai" class="project-img">
+                <h3 class="project-title">SAMURAI | Action Reel</h3>
+                <p class="project-desc">La calma previa a la tormenta en la mente de un guerrero. Edición rítmica, diseño sonoro pesado y estética dramática.</p>
+                <p class="project-desc-en">The calm before the storm in a warrior's mind. Rhythmic editing, heavy sound design, and dramatic aesthetics.</p>
+                <a href="LINK_YOUTUBE_SAMURAI" target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.8rem;">WATCH REEL</a>
+            </div>
+
+            <!-- PROYECTO 3: DIVER 1921 -->
+            <div class="project-card">
+                <img src="diver-foto.jpg" alt="Diver 1921" class="project-img">
+                <h3 class="project-title">DIVER 1921 | Surreal Reel</h3>
+                <p class="project-desc">La tensión constante de un buzo antiguo enfrentando situaciones mundanas. Una pieza de alto contraste estético y narrativo.</p>
+                <p class="project-desc-en">The constant tension of an antique diver facing mundane situations. A piece of high aesthetic and narrative contrast.</p>
+                <a href="LINK_YOUTUBE_DIVER" target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.8rem;">WATCH REEL</a>
+            </div>
+
+            <!-- PROYECTO 4: CHOOSE YOUR STYLE -->
+            <div class="project-card">
+                <img src="style-foto.jpg" alt="Choose Your Style" class="project-img">
+                <h3 class="project-title">CHOOSE YOUR STYLE | Fashion Reel</h3>
+                <p class="project-desc">Un manifiesto visual sobre la identidad. Generación de personajes consistentes mostrando la versatilidad del estilo personal.</p>
+                <p class="project-desc-en">A visual manifesto on identity. Consistent character generation showcasing the versatility of personal style.</p>
+                <a href="LINK_YOUTUBE_STYLE" target="_blank" class="btn" style="padding: 10px 20px; font-size: 0.8rem;">WATCH REEL</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer container">
+        <h2>LET'S CREATE THE IMPOSSIBLE.</h2>
+        <div style="margin-top: 30px;">
+            <a href="mailto:franco@ruvistudio.com">franco@ruvistudio.com</a> | 
+            <a href="https://instagram.com/ruvi.studio" target="_blank">@ruvi.studio</a> | 
+            <span style="color: var(--accent-gold);">Buenos Aires / Worldwide B2B</span>
+        </div>
+    </footer>
+
+</body>
+</html>
