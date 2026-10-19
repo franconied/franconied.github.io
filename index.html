@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RUVI Studio | Synthetic Cinema & Creative Direction</title>
     
-    <!-- Favicon actualizado a logo.png -->
     <link rel="icon" type="image/png" href="logo.png">
-    
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -45,72 +43,40 @@
             border-bottom: 1px solid rgba(217, 200, 170, 0.1);
         }
         
-        .logo-img { 
-            height: 85px; 
-            transition: transform 0.3s;
-        }
-        .logo-img:hover {
-            transform: scale(1.05);
-        }
+        .logo-img { height: 85px; transition: transform 0.3s; }
+        .logo-img:hover { transform: scale(1.05); }
         
         .nav-controls {
-            position: absolute;
-            right: 5%;
-            display: flex;
-            align-items: center;
-            gap: 25px;
+            position: absolute; right: 5%;
+            display: flex; align-items: center; gap: 25px;
         }
         .lang-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: color 0.3s;
-            letter-spacing: 1px;
+            background: transparent; border: none; color: var(--text-muted);
+            font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700;
+            cursor: pointer; transition: color 0.3s; letter-spacing: 1px;
         }
         .lang-btn:hover { color: var(--accent-gold); }
         .nav-btn {
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            border: 1px solid var(--accent-gold);
-            padding: 10px 24px;
-            border-radius: 2px;
-            transition: all 0.3s;
-            text-transform: uppercase;
+            color: var(--accent-gold); text-decoration: none; font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem; letter-spacing: 2px; border: 1px solid var(--accent-gold);
+            padding: 10px 24px; border-radius: 2px; transition: all 0.3s; text-transform: uppercase;
         }
         .nav-btn:hover { background: var(--accent-gold); color: #000; }
 
         .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 5%;
+            height: 100vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 0 5%;
             background: linear-gradient(rgba(2, 2, 2, 0.7), rgba(2, 2, 2, 0.95)), url('Foto%2002.jpg') center/cover no-repeat;
             margin-top: 110px; 
         }
         .hero-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: clamp(3rem, 10vw, 7rem);
-            line-height: 0.95;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
+            font-family: 'Montserrat', sans-serif; font-weight: 900;
+            font-size: clamp(3rem, 10vw, 7rem); line-height: 0.95; margin-bottom: 25px; letter-spacing: 1px;
         }
         .outline { color: transparent; -webkit-text-stroke: 1px var(--accent-gold); }
         .hero-desc {
-            max-width: 800px; font-size: 1.3rem;
-            color: var(--text-main); margin-bottom: 10px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
-            font-weight: 400;
+            max-width: 800px; font-size: 1.3rem; color: var(--text-main); margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9); font-weight: 400;
         }
 
         .container { padding: 120px 5%; background-color: var(--bg-section); }
@@ -119,10 +85,7 @@
         .section-header p { color: var(--accent-gold); font-weight: 700; letter-spacing: 4px; font-size: 0.85rem; margin-bottom: 15px;}
         .section-header h2 { font-family: 'Montserrat', sans-serif; font-size: 3rem; text-transform: uppercase; line-height: 1.1; }
 
-        .vision-section {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
-            align-items: center;
-        }
+        .vision-section { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
         .vision-img { width: 100%; border-radius: 2px; box-shadow: 0 30px 60px rgba(0,0,0,0.9); border: 1px solid rgba(255,255,255,0.05); }
         .vision-text h2 { font-family: 'Montserrat', sans-serif; font-size: 2.8rem; margin-bottom: 30px; line-height: 1.1; }
         .vision-text p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 25px; line-height: 1.7; }
@@ -137,11 +100,22 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
         .card { background: #000; border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.5s ease; display: flex; flex-direction: column; }
         .card:hover { border-color: var(--accent-gold); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
-        .card-img-wrapper { width: 100%; height: 380px; overflow: hidden; position: relative; }
+        
+        /* SLIDER STYLES */
+        .slider-container { width: 100%; height: 380px; overflow: hidden; position: relative; }
         .card-tag { position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.8); color: var(--accent-gold); padding: 5px 12px; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; z-index: 10; border: 1px solid var(--accent-gold); }
-        .card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; opacity: 0.85; }
-        .card:hover .card-img { transform: scale(1.06); opacity: 1; }
-        .card-body { padding: 40px 30px; display: flex; flex-direction: column; flex-grow: 1; }
+        .slider-wrapper { width: 100%; height: 100%; position: relative; }
+        .slide { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease, transform 0.8s ease; }
+        .slide.active { opacity: 0.85; z-index: 2; }
+        .card:hover .slide.active { opacity: 1; transform: scale(1.04); }
+        
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: var(--accent-gold); border: 1px solid rgba(217, 200, 170, 0.2); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; justify-content: center; align-items: center; transition: all 0.3s; opacity: 0; }
+        .card:hover .slider-btn { opacity: 1; }
+        .slider-btn:hover { background: var(--accent-gold); color: #000; }
+        .slider-btn.prev { left: 10px; }
+        .slider-btn.next { right: 10px; }
+
+        .card-body { padding: 40px 30px; display: flex; flex-direction: column; flex-grow: 1; z-index: 5; position: relative;}
         .card-title { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; }
         .card-text { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 30px; flex-grow: 1; }
         .card-text strong { color: var(--text-main); }
@@ -157,13 +131,13 @@
         @media (max-width: 900px) {
             .vision-section { grid-template-columns: 1fr; gap: 40px; }
             .nav-btn { display: none; }
+            .slider-btn { opacity: 1; background: rgba(0,0,0,0.6); } /* Flechas siempre visibles en celu */
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <!-- Logo actualizado a logo.png -->
         <a href="#">
             <img src="logo.png" alt="RUVI Studio Logo" class="logo-img">
         </a>
@@ -263,11 +237,19 @@
 
         <div class="grid">
             
+            <!-- 1. DIVER 1921 -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="slider-container">
                     <span class="card-tag es">Reel Narrativo</span>
                     <span class="card-tag en">Narrative Reel</span>
-                    <img src="Deep-sea_diver_marching_in_hallway_2K_20260915101223.jpeg" alt="Diver 1921" class="card-img">
+                    <button class="slider-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+                    <div class="slider-wrapper">
+                        <img src="Lavanderia.png" class="slide active" alt="Diver">
+                        <img src="Sushi%20bar.png" class="slide" alt="Diver">
+                        <img src="Telephone.png" class="slide" alt="Diver">
+                        <img src="Pasillo.jpeg" class="slide" alt="Diver">
+                    </div>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">DIVER 1921</h3>
@@ -279,16 +261,24 @@
                         <p>A cinematic staging featuring an extravagant diver immersed in tense situations that culminate in absurdly mundane actions.</p>
                         <p><br><strong>Aesthetics:</strong> Hyper-polished where the unreal and mundane collide.</p>
                     </div>
-                    <a href="#" target="_blank" class="watch-btn es">Ver Reel</a>
-                    <a href="#" target="_blank" class="watch-btn en">Watch Reel</a>
+                    <a href="https://youtu.be/rPnYFZ-M8tg" target="_blank" class="watch-btn es">Ver Reel</a>
+                    <a href="https://youtu.be/rPnYFZ-M8tg" target="_blank" class="watch-btn en">Watch Reel</a>
                 </div>
             </div>
 
+            <!-- 2. VUZ SODA -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="slider-container">
                     <span class="card-tag es">Reel Comercial</span>
                     <span class="card-tag en">Commercial Reel</span>
-                    <img src="Grape_soda_bottle_near_boombox_2K_20261002163639.jpg" alt="VUZ Soda" class="card-img">
+                    <button class="slider-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+                    <div class="slider-wrapper">
+                        <img src="Vuz%20Parlante.jpg" class="slide active" alt="VUZ">
+                        <img src="Vuz%20Skate.jpg" class="slide" alt="VUZ">
+                        <img src="Vuz%20Chico.jpg" class="slide" alt="VUZ">
+                        <img src="Vuz%20Boliche.jpg" class="slide" alt="VUZ">
+                    </div>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">VUZ SODA</h3>
@@ -300,16 +290,19 @@
                         <p><strong>Campaign:</strong> The dynamism of 80s youth gathered around a vibrant, trendy beverage.</p>
                         <p><br><strong>Format:</strong> Fake commercial driven by an original synthetic jingle and strong retro urban aesthetics.</p>
                     </div>
-                    <a href="#" target="_blank" class="watch-btn es">Ver Reel</a>
-                    <a href="#" target="_blank" class="watch-btn en">Watch Reel</a>
+                    <a href="https://youtu.be/ayEPDruBNKI" target="_blank" class="watch-btn es">Ver Reel</a>
+                    <a href="https://youtu.be/ayEPDruBNKI" target="_blank" class="watch-btn en">Watch Reel</a>
                 </div>
             </div>
 
+            <!-- 3. HUSTON (Sin slider, foto única) -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="slider-container">
                     <span class="card-tag es">Reel Cinemático</span>
                     <span class="card-tag en">Cinematic Reel</span>
-                    <img src="HUSTON.jpg" alt="Huston" class="card-img">
+                    <div class="slider-wrapper">
+                        <img src="Astronauta.jpg" class="slide active" alt="Huston">
+                    </div>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">HUSTON</h3>
@@ -321,16 +314,23 @@
                         <p>A compact drama in a single scene. A piece that traverses emotional depth accompanied by a tension-filled situation.</p>
                         <p><br><strong>Technique:</strong> SFX as the fundamental key to setting the mood. A cabin that generates both claustrophobia and liberation.</p>
                     </div>
-                    <a href="#" target="_blank" class="watch-btn es">Ver Reel</a>
-                    <a href="#" target="_blank" class="watch-btn en">Watch Reel</a>
+                    <a href="https://youtu.be/eiHfpl1FxrQ" target="_blank" class="watch-btn es">Ver Reel</a>
+                    <a href="https://youtu.be/eiHfpl1FxrQ" target="_blank" class="watch-btn en">Watch Reel</a>
                 </div>
             </div>
 
+            <!-- 4. SAMURAI -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="slider-container">
                     <span class="card-tag es">Reel Cinemático</span>
                     <span class="card-tag en">Cinematic Reel</span>
-                    <img src="Samurai_resting_on_wooden_porch_2K_20260924214134.jpeg" alt="Samurai" class="card-img">
+                    <button class="slider-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+                    <div class="slider-wrapper">
+                        <img src="SAMURAI%20CASCO.jpeg" class="slide active" alt="Samurai">
+                        <img src="Samurai%20smoking.jpg" class="slide" alt="Samurai">
+                        <img src="Sitting%20Samurai.jpg" class="slide" alt="Samurai">
+                    </div>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">SAMURAI</h3>
@@ -342,16 +342,24 @@
                         <p>The unbreakable calm of an imposing warrior in the pre-combat tension.</p>
                         <p><br><strong>Technique:</strong> Strong rhythmic contrast between frantic editing and serene movements. Dramatic lighting and immersive settings.</p>
                     </div>
-                    <a href="#" target="_blank" class="watch-btn es">Ver Reel</a>
-                    <a href="#" target="_blank" class="watch-btn en">Watch Reel</a>
+                    <a href="https://youtu.be/cr6pFpzVu3k" target="_blank" class="watch-btn es">Ver Reel</a>
+                    <a href="https://youtu.be/cr6pFpzVu3k" target="_blank" class="watch-btn en">Watch Reel</a>
                 </div>
             </div>
 
+            <!-- 5. CHOOSE YOUR STYLE -->
             <div class="card">
-                <div class="card-img-wrapper">
+                <div class="slider-container">
                     <span class="card-tag es">Reel de Moda</span>
                     <span class="card-tag en">Fashion Reel</span>
-                    <img src="MET%20gala%20v2.jpg" alt="Choose Your Style" class="card-img">
+                    <button class="slider-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <button class="slider-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+                    <div class="slider-wrapper">
+                        <img src="Chica%2070.jpeg" class="slide active" alt="Style">
+                        <img src="MET%20gala.jpeg" class="slide" alt="Style">
+                        <img src="Electrica.jpeg" class="slide" alt="Style">
+                        <img src="Chica%20vestido.png" class="slide" alt="Style">
+                    </div>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">CHOOSE YOUR STYLE</h3>
@@ -363,8 +371,8 @@
                         <p><strong>Concept:</strong> Advertising reel exploring life's multiplicity, proving that true identity is versatile and always authentic.</p>
                         <p><br><strong>Execution:</strong> Fluid dynamic transitions for constant aesthetic exploration.</p>
                     </div>
-                    <a href="#" target="_blank" class="watch-btn es">Ver Reel</a>
-                    <a href="#" target="_blank" class="watch-btn en">Watch Reel</a>
+                    <a href="https://youtu.be/c0Q_Xpwpi2w" target="_blank" class="watch-btn es">Ver Reel</a>
+                    <a href="https://youtu.be/c0Q_Xpwpi2w" target="_blank" class="watch-btn en">Watch Reel</a>
                 </div>
             </div>
 
@@ -383,6 +391,7 @@
     </footer>
 
     <script>
+        // Lógica de Idiomas
         function toggleLang() {
             const htmlTag = document.documentElement;
             const btn = document.getElementById('langBtn');
@@ -394,6 +403,26 @@
                 htmlTag.setAttribute('lang', 'es');
                 btn.textContent = 'EN';
             }
+        }
+
+        // Lógica de Sliders
+        function moveSlide(btn, direction) {
+            const container = btn.parentElement.querySelector('.slider-wrapper');
+            const slides = container.querySelectorAll('.slide');
+            let activeIndex = 0;
+            
+            slides.forEach((slide, index) => {
+                if (slide.classList.contains('active')) {
+                    activeIndex = index;
+                    slide.classList.remove('active');
+                }
+            });
+            
+            let newIndex = activeIndex + direction;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            if (newIndex >= slides.length) newIndex = 0;
+            
+            slides[newIndex].classList.add('active');
         }
     </script>
 </body>
