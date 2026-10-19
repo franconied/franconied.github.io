@@ -6,13 +6,14 @@
     <title>RUVI Studio | Synthetic Cinema & Creative Direction</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
     <style>
-        /* Variables y Paleta Premium */
+        /* Variables y Paleta de LUJO */
         :root {
-            --bg-deep: #020202; /* Negro puro cinemático */
-            --bg-section: #0a0e0b; /* Verde ultra oscuro casi negro */
+            --bg-deep: #020202; 
+            --bg-section: #0a0e0b; 
             --text-main: #f4f0e6;
-            --text-muted: #999;
+            --text-muted: #a3a3a3;
             --accent-gold: #d9c8aa;
+            --accent-green: #142920;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,37 +23,61 @@
             font-family: 'DM Sans', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Nav Bar - Centrada y minimalista */
+        /* Lógica del Sistema Bilingüe */
+        [lang="es"] .en { display: none !important; }
+        [lang="en"] .es { display: none !important; }
+
+        /* Navegación */
         nav {
             position: fixed;
-            top: 0; width: 100%;
-            height: 90px;
+            top: 0; width: 100%; height: 90px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #000000;
+            background: rgba(2, 2, 2, 0.85);
+            backdrop-filter: blur(15px);
             z-index: 100;
             border-bottom: 1px solid rgba(217, 200, 170, 0.1);
         }
-        .logo-img { height: 65px; }
-        .nav-btn {
+        .logo-img { height: 60px; }
+        
+        .nav-controls {
             position: absolute;
             right: 5%;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: color 0.3s;
+            letter-spacing: 1px;
+        }
+        .lang-btn:hover { color: var(--accent-gold); }
+        .nav-btn {
             color: var(--accent-gold);
             text-decoration: none;
             font-family: 'Montserrat', sans-serif;
             font-size: 0.8rem;
             letter-spacing: 2px;
             border: 1px solid var(--accent-gold);
-            padding: 10px 20px;
+            padding: 10px 24px;
+            border-radius: 2px;
             transition: all 0.3s;
             text-transform: uppercase;
         }
         .nav-btn:hover { background: var(--accent-gold); color: #000; }
 
-        /* Hero Section - Foto 02 de fondo */
+        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -61,210 +86,293 @@
             align-items: center;
             text-align: center;
             padding: 0 5%;
-            /* Efecto oscurecido sobre la FOTO 02 para que el texto resalte */
-            background: linear-gradient(rgba(2, 2, 2, 0.6), rgba(2, 2, 2, 0.9)), url('Foto 02.jpg') center/cover no-repeat;
-            margin-top: 90px; /* Compensa la barra de nav */
+            background: linear-gradient(rgba(2, 2, 2, 0.7), rgba(2, 2, 2, 0.95)), url('Foto%2002.jpg') center/cover no-repeat;
+            margin-top: 90px; 
         }
         .hero-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            line-height: 1;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
+            font-size: clamp(3rem, 10vw, 7rem);
+            line-height: 0.95;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
         }
-        .outline {
-            color: transparent;
-            -webkit-text-stroke: 1px var(--accent-gold);
-        }
+        .outline { color: transparent; -webkit-text-stroke: 1px var(--accent-gold); }
         .hero-desc {
-            max-width: 700px;
-            font-size: 1.2rem;
-            color: var(--text-main);
-            margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            max-width: 800px; font-size: 1.3rem;
+            color: var(--text-main); margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+            font-weight: 400;
         }
-        .hero-desc.en { color: var(--accent-gold); font-size: 1rem; font-style: italic; }
 
         /* Contenedores generales */
         .container { padding: 120px 5%; background-color: var(--bg-section); }
-        .section-header { margin-bottom: 60px; text-align: center; }
-        .section-header p { color: var(--accent-gold); font-weight: 700; letter-spacing: 3px; font-size: 0.85rem; margin-bottom: 10px;}
-        .section-header h2 { font-family: 'Montserrat', sans-serif; font-size: 2.8rem; text-transform: uppercase; }
+        .container-dark { padding: 120px 5%; background-color: var(--bg-deep); }
+        .section-header { margin-bottom: 70px; text-align: center; }
+        .section-header p { color: var(--accent-gold); font-weight: 700; letter-spacing: 4px; font-size: 0.85rem; margin-bottom: 15px;}
+        .section-header h2 { font-family: 'Montserrat', sans-serif; font-size: 3rem; text-transform: uppercase; line-height: 1.1; }
 
-        /* Split Layout - Visión (Foto 01 + Texto) */
+        /* Vision Section */
         .vision-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
             align-items: center;
-            background-color: var(--bg-deep);
-            padding: 100px 5%;
         }
-        .vision-img {
-            width: 100%;
-            border-radius: 4px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .vision-text h2 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 10px; }
-        .vision-text h3 { color: var(--accent-gold); font-family: 'DM Sans', sans-serif; font-size: 1rem; letter-spacing: 2px; margin-bottom: 30px; }
-        .vision-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 20px; }
-        .vision-text p.en { color: var(--accent-gold); font-style: italic; font-size: 1rem; }
+        .vision-img { width: 100%; border-radius: 2px; box-shadow: 0 30px 60px rgba(0,0,0,0.9); border: 1px solid rgba(255,255,255,0.05); }
+        .vision-text h2 { font-family: 'Montserrat', sans-serif; font-size: 2.8rem; margin-bottom: 30px; line-height: 1.1; }
+        .vision-text p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 25px; line-height: 1.7; }
+        .vision-bullets { margin-top: 30px; border-left: 2px solid var(--accent-gold); padding-left: 20px; }
+        .vision-bullets li { list-style: none; font-family: 'Montserrat', sans-serif; font-size: 1rem; color: var(--text-main); margin-bottom: 10px; letter-spacing: 1px; }
+
+        /* Servicios & Metodología */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 80px; }
+        .service-box { border-top: 1px solid rgba(217, 200, 170, 0.3); padding-top: 20px; }
+        .service-box h3 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 10px; }
+        .service-box p { color: var(--text-muted); font-size: 1rem; }
 
         /* Portfolio Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-        .card {
-            background: #000;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s ease;
-        }
-        .card:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-5px);
-        }
-        .card-img-wrapper { width: 100%; height: 400px; overflow: hidden; }
-        .card-img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-            opacity: 0.8;
-        }
-        .card:hover .card-img { transform: scale(1.05); opacity: 1; }
-        .card-body { padding: 40px 30px; }
-        .card-title { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; margin-bottom: 10px; letter-spacing: 1px; }
-        .card-text { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 15px; }
-        .card-text.en { color: var(--accent-gold); font-size: 0.85rem; font-style: italic; margin-bottom: 30px; }
-        .watch-btn {
-            display: inline-block;
-            color: var(--text-main);
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            border-bottom: 1px solid var(--accent-gold);
-            padding-bottom: 5px;
-            text-transform: uppercase;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
+        .card { background: #000; border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.5s ease; display: flex; flex-direction: column; }
+        .card:hover { border-color: var(--accent-gold); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        .card-img-wrapper { width: 100%; height: 380px; overflow: hidden; position: relative; }
+        .card-tag { position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.8); color: var(--accent-gold); padding: 5px 12px; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; z-index: 10; border: 1px solid var(--accent-gold); }
+        .card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; opacity: 0.85; }
+        .card:hover .card-img { transform: scale(1.06); opacity: 1; }
+        .card-body { padding: 40px 30px; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-title { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; }
+        .card-text { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 30px; flex-grow: 1; }
+        .card-text strong { color: var(--text-main); }
+        .watch-btn { align-self: flex-start; color: var(--text-main); text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 2px; border-bottom: 1px solid var(--accent-gold); padding-bottom: 5px; text-transform: uppercase; transition: color 0.3s; }
         .watch-btn:hover { color: var(--accent-gold); }
 
         /* Footer */
-        footer {
-            text-align: center;
-            padding: 100px 5%;
-            background: #000;
-            border-top: 1px solid rgba(217, 200, 170, 0.1);
-        }
-        footer h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 40px; color: var(--accent-gold); }
-        footer a { color: var(--text-muted); text-decoration: none; margin: 0 15px; letter-spacing: 1px; font-size: 0.9rem;}
-        footer a:hover { color: var(--text-main); }
+        footer { text-align: center; padding: 120px 5%; background: #000; border-top: 1px solid rgba(217, 200, 170, 0.1); }
+        footer h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 40px; color: var(--accent-gold); line-height: 1.1; }
+        footer p { color: var(--text-muted); margin-bottom: 30px; font-size: 1.2rem; }
+        footer a { color: var(--text-main); text-decoration: none; margin: 0 15px; letter-spacing: 1px; font-size: 1rem; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: border-color 0.3s;}
+        footer a:hover { border-color: var(--accent-gold); }
 
-        /* Responsive Breakpoints */
         @media (max-width: 900px) {
-            .vision-section { grid-template-columns: 1fr; }
-            .nav-btn { display: none; } /* Oculta botón en móviles para dejar limpio el logo */
+            .vision-section { grid-template-columns: 1fr; gap: 40px; }
+            .nav-btn { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navegación con tu Isologo centrado -->
+    <!-- Navegación -->
     <nav>
-        <img src="ISOLOGO SIN FONDO.jpg" alt="RUVI Studio Logo" class="logo-img">
-        <a href="mailto:franco@ruvistudio.com" class="nav-btn">Start a Project</a>
+        <!-- Reemplazá el nombre de archivo por tu isologo -->
+        <img src="ISOLOGO%20SIN%20FONDO.jpg" alt="RUVI Studio Logo" class="logo-img">
+        <div class="nav-controls">
+            <button id="langBtn" class="lang-btn" onclick="toggleLang()">EN</button>
+            <a href="mailto:franco@ruvistudio.com" class="nav-btn">
+                <span class="es">Contactar</span>
+                <span class="en">Start a Project</span>
+            </a>
+        </div>
     </nav>
 
-    <!-- Hero Section con Foto 02 de fondo -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-title">
             <div class="outline">SYNTHETIC</div>
-            <div>CINEMA</div>
+            <div class="es">CINE</div>
+            <div class="en">CINEMA</div>
         </div>
-        <p class="hero-desc">Comerciales, Brand Films y visuales imposibles impulsados por IA y rigor de postproducción.</p>
-        <p class="hero-desc en">Commercials, Brand Films, and impossible visuals driven by AI and traditional post-production rigor.</p>
+        <p class="hero-desc es">Cine sintético, comerciales de alto impacto y dirección visual.</p>
+        <p class="hero-desc en">Synthetic cinema, high-impact commercials, and visual direction.</p>
     </section>
 
-    <!-- Visión con Foto 01 a la izquierda y texto a la derecha -->
-    <section class="vision-section">
+    <!-- Vision Section (El Manifiesto) -->
+    <section class="container-dark vision-section">
         <div>
-            <img src="FOTO 01.jpg" alt="RUVI Studio Workspace" class="vision-img">
+            <!-- Reemplazá por la foto del estudio -->
+            <img src="FOTO%2001.jpg" alt="RUVI Studio Workspace" class="vision-img">
         </div>
         <div class="vision-text">
-            <h2>Nuestra Visión</h2>
-            <h3>OUR VISION</h3>
-            <p>No generamos videos al azar. En RUVI combinamos la velocidad y el infinito potencial de la IA generativa con el criterio de montaje, el color y el diseño sonoro de la industria tradicional.</p>
-            <p>El resultado: impacto cinematográfico a una fracción del costo de un rodaje físico.</p>
-            <p class="en">We don't generate random videos. At RUVI, we combine the speed and endless potential of generative AI with the editing craft, color grading, and sound design of the traditional industry.</p>
+            <h2 class="es">El infinito visual de la IA con el rigor de la posproducción tradicional.</h2>
+            <h2 class="en">The infinite visual potential of AI with traditional post-production rigor.</h2>
+            
+            <div class="es">
+                <p>No generamos videos automáticos: diseñamos universos narrativos con dirección de arte, montaje rítmico y acabado cinematográfico real.</p>
+                <ul class="vision-bullets">
+                    <li>ITERACIÓN VISUAL</li>
+                    <li>CRITERIO CINEMATOGRÁFICO</li>
+                    <li>ESCALABILIDAD B2B</li>
+                </ul>
+            </div>
+            
+            <div class="en">
+                <p>We don't generate automatic videos: we design narrative universes with art direction, rhythmic editing, and a real cinematic finish.</p>
+                <ul class="vision-bullets">
+                    <li>VISUAL ITERATION</li>
+                    <li>CINEMATIC CRAFT</li>
+                    <li>B2B SCALABILITY</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios y Metodología -->
+    <section class="container">
+        <div class="section-header">
+            <p class="es">LO QUE HACEMOS</p>
+            <p class="en">WHAT WE DO</p>
+            <h2 class="es">Líneas de Servicio</h2>
+            <h2 class="en">Service Lines</h2>
+        </div>
+
+        <div class="services-grid es">
+            <div class="service-box">
+                <h3>Social Impact</h3>
+                <p>Piezas cortas, Fake OOH y Reels para lanzamientos de producto.</p>
+            </div>
+            <div class="service-box">
+                <h3>Brand Films</h3>
+                <p>Campañas narrativas centrales con acabado de cine comercial.</p>
+            </div>
+            <div class="service-box">
+                <h3>Visualizers</h3>
+                <p>Entornos digitales para videoclips y pantallas LED en vivo.</p>
+            </div>
+        </div>
+
+        <div class="services-grid en">
+            <div class="service-box">
+                <h3>Social Impact</h3>
+                <p>Short-form pieces, Fake OOH, and Reels for product launches.</p>
+            </div>
+            <div class="service-box">
+                <h3>Brand Films</h3>
+                <p>Core narrative campaigns with a commercial cinema finish.</p>
+            </div>
+            <div class="service-box">
+                <h3>Visualizers</h3>
+                <p>Digital environments for music videos and live LED screens.</p>
+            </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section class="container">
+    <section class="container-dark">
         <div class="section-header">
-            <p>SELECTED WORK</p>
-            <h2>Casos de Estudio</h2>
+            <p class="es">TRABAJOS DESTACADOS</p>
+            <p class="en">SELECTED WORK</p>
+            <h2 class="es">Casos de Estudio</h2>
+            <h2 class="en">Case Studies</h2>
         </div>
 
         <div class="grid">
             
-            <!-- VUZ -->
+            <!-- 1. DIVER 1921 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <!-- REEMPLAZAR POR FOTO DE VUZ -->
-                    <img src="Grape_soda_bottle_near_boombox_2K_20261002163639.jpg" alt="VUZ Soda" class="card-img">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">VUZ SODA</h3>
-                    <p class="card-text">Un viaje a los 80s impulsado por IA. Exploración estética, consistencia de producto y jingle sintético.</p>
-                    <p class="card-text en">A 100% AI-driven trip to the 80s. Exploration of urban aesthetics, product consistency, and synthetic jingle.</p>
-                    <!-- LINK A YOUTUBE -->
-                    <a href="#" target="_blank" class="watch-btn">Watch Reel</a>
-                </div>
-            </div>
-
-            <!-- SAMURAI -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <!-- REEMPLAZAR POR FOTO DE SAMURAI -->
-                    <img src="Samurai_resting_on_wooden_porch_2K_20260924214134.jpeg" alt="Samurai" class="card-img">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">SAMURAI</h3>
-                    <p class="card-text">La calma previa a la tormenta. Edición rítmica, diseño sonoro pesado y estética dramática.</p>
-                    <p class="card-text en">The calm before the storm. Rhythmic editing, heavy sound design, and dramatic aesthetics.</p>
-                    <a href="#" target="_blank" class="watch-btn">Watch Reel</a>
-                </div>
-            </div>
-
-            <!-- DIVER 1921 -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <!-- REEMPLAZAR POR FOTO DE DIVER -->
+                    <span class="card-tag es">Reel Narrativo</span>
+                    <span class="card-tag en">Narrative Reel</span>
+                    <!-- Agregá el nombre de tu archivo de imagen acá -->
                     <img src="Deep-sea_diver_marching_in_hallway_2K_20260915101223.jpeg" alt="Diver 1921" class="card-img">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">DIVER 1921</h3>
-                    <p class="card-text">La tensión constante de un buzo antiguo enfrentando situaciones mundanas. Alto contraste estético.</p>
-                    <p class="card-text en">The constant tension of an antique diver facing mundane situations. High aesthetic contrast.</p>
-                    <a href="#" target="_blank" class="watch-btn">Watch Reel</a>
+                    <div class="card-text es">
+                        <p>Puesta cinematográfica en la que tiene como protagonista a un extravagante buzo, sumido en situaciones de tensión que culminan en acciones absurdamente cotidianas.</p>
+                        <p><br><strong>Estética:</strong> Hiper-pulida donde lo irreal y lo mundano colisionan.</p>
+                    </div>
+                    <div class="card-text en">
+                        <p>A cinematic staging featuring an extravagant diver immersed in tense situations that culminate in absurdly mundane actions.</p>
+                        <p><br><strong>Aesthetics:</strong> Hyper-polished where the unreal and mundane collide.</p>
+                    </div>
+                    <a href="#" target="_blank" class="watch-btn es">Ver Reel</a>
+                    <a href="#" target="_blank" class="watch-btn en">Watch Reel</a>
                 </div>
             </div>
 
-            <!-- CHOOSE YOUR STYLE -->
+            <!-- 2. VUZ SODA -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <!-- REEMPLAZAR POR FOTO DE CHOOSE YOUR STYLE -->
-                    <img src="MET gala v2.jpg" alt="Choose Your Style" class="card-img">
+                    <span class="card-tag es">Reel Comercial</span>
+                    <span class="card-tag en">Commercial Reel</span>
+                    <img src="Grape_soda_bottle_near_boombox_2K_20261002163639.jpg" alt="VUZ Soda" class="card-img">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">VUZ SODA</h3>
+                    <div class="card-text es">
+                        <p><strong>Campaña:</strong> Todo el dinamismo de la juventud de los 80s reunida alrededor de una vibrante bebida de moda.</p>
+                        <p><br><strong>Formato:</strong> Fake commercial impulsado por un jingle sintético original y fuerte estética retro urbana.</p>
+                    </div>
+                    <div class="card-text en">
+                        <p><strong>Campaign:</strong> The dynamism of 80s youth gathered around a vibrant, trendy beverage.</p>
+                        <p><br><strong>Format:</strong> Fake commercial driven by an original synthetic jingle and strong retro urban aesthetics.</p>
+                    </div>
+                    <a href="#" target="_blank" class="watch-btn es">Ver Reel</a>
+                    <a href="#" target="_blank" class="watch-btn en">Watch Reel</a>
+                </div>
+            </div>
+
+            <!-- 3. HUSTON -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <span class="card-tag es">Reel Cinemático</span>
+                    <span class="card-tag en">Cinematic Reel</span>
+                    <!-- Agregá el nombre de tu archivo de imagen acá -->
+                    <img src="HUSTON.jpg" alt="Huston" class="card-img">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">HUSTON</h3>
+                    <div class="card-text es">
+                        <p>Drama compacto en una sola escena. Una pieza que transita un grado de emocionalidad acompañado por una situación llena de tensión.</p>
+                        <p><br><strong>Técnica:</strong> SFX como clave fundamental para crear el clima. Una cabina que genera claustrofobia y liberación.</p>
+                    </div>
+                    <div class="card-text en">
+                        <p>A compact drama in a single scene. A piece that traverses emotional depth accompanied by a tension-filled situation.</p>
+                        <p><br><strong>Technique:</strong> SFX as the fundamental key to setting the mood. A cabin that generates both claustrophobia and liberation.</p>
+                    </div>
+                    <a href="#" target="_blank" class="watch-btn es">Ver Reel</a>
+                    <a href="#" target="_blank" class="watch-btn en">Watch Reel</a>
+                </div>
+            </div>
+
+            <!-- 4. SAMURAI -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <span class="card-tag es">Reel Cinemático</span>
+                    <span class="card-tag en">Cinematic Reel</span>
+                    <img src="Samurai_resting_on_wooden_porch_2K_20260924214134.jpeg" alt="Samurai" class="card-img">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">SAMURAI</h3>
+                    <div class="card-text es">
+                        <p>La calma inquebrantable de un guerrero imponente en la tensión previa al combate.</p>
+                        <p><br><strong>Técnica:</strong> Fuerte contraste rítmico entre la edición frenética y los movimientos serenos. Iluminación dramática y escenarios inmersivos.</p>
+                    </div>
+                    <div class="card-text en">
+                        <p>The unbreakable calm of an imposing warrior in the pre-combat tension.</p>
+                        <p><br><strong>Technique:</strong> Strong rhythmic contrast between frantic editing and serene movements. Dramatic lighting and immersive settings.</p>
+                    </div>
+                    <a href="#" target="_blank" class="watch-btn es">Ver Reel</a>
+                    <a href="#" target="_blank" class="watch-btn en">Watch Reel</a>
+                </div>
+            </div>
+
+            <!-- 5. CHOOSE YOUR STYLE -->
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <span class="card-tag es">Reel de Moda</span>
+                    <span class="card-tag en">Fashion Reel</span>
+                    <img src="MET%20gala%20v2.jpg" alt="Choose Your Style" class="card-img">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">CHOOSE YOUR STYLE</h3>
-                    <p class="card-text">Un manifiesto visual sobre la identidad. Generación de personajes mostrando la versatilidad de estilo.</p>
-                    <p class="card-text en">A visual manifesto on identity. Consistent character generation showcasing the versatility of style.</p>
-                    <a href="#" target="_blank" class="watch-btn">Watch Reel</a>
+                    <div class="card-text es">
+                        <p><strong>Concepto:</strong> Reel publicitario que explora la multiplicidad de la vida, demostrando que la verdadera identidad es versátil y siempre auténtica.</p>
+                        <p><br><strong>Ejecución:</strong> Transiciones dinámicas fluidas para una exploración estética constante.</p>
+                    </div>
+                    <div class="card-text en">
+                        <p><strong>Concept:</strong> Advertising reel exploring life's multiplicity, proving that true identity is versatile and always authentic.</p>
+                        <p><br><strong>Execution:</strong> Fluid dynamic transitions for constant aesthetic exploration.</p>
+                    </div>
+                    <a href="#" target="_blank" class="watch-btn es">Ver Reel</a>
+                    <a href="#" target="_blank" class="watch-btn en">Watch Reel</a>
                 </div>
             </div>
 
@@ -273,11 +381,30 @@
 
     <!-- Footer -->
     <footer>
-        <h2>LET'S CREATE THE IMPOSSIBLE.</h2>
-        <a href="mailto:franco@ruvistudio.com">franco@ruvistudio.com</a>
-        <a href="https://instagram.com/ruvi.studio" target="_blank">@ruvi.studio</a>
-        <a href="#" style="color: var(--text-main);">Buenos Aires / Worldwide</a>
+        <h2 class="es">Hagamos tu próxima campaña.</h2>
+        <h2 class="en">Let's build your next campaign.</h2>
+        <p class="es">RUVI STUDIO</p>
+        <p class="en">RUVI STUDIO</p>
+        <div>
+            <a href="mailto:franco@ruvistudio.com">franco@ruvistudio.com</a>
+            <a href="https://ruvistudio.com">ruvistudio.com</a>
+        </div>
     </footer>
 
+    <!-- Script para cambiar idioma -->
+    <script>
+        function toggleLang() {
+            const htmlTag = document.documentElement;
+            const btn = document.getElementById('langBtn');
+            
+            if (htmlTag.getAttribute('lang') === 'es') {
+                htmlTag.setAttribute('lang', 'en');
+                btn.textContent = 'ES';
+            } else {
+                htmlTag.setAttribute('lang', 'es');
+                btn.textContent = 'EN';
+            }
+        }
+    </script>
 </body>
 </html>
