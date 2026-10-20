@@ -130,7 +130,11 @@
 
         @media (max-width: 900px) {
             .vision-section { grid-template-columns: 1fr; gap: 40px; }
-            .nav-btn { display: none; }
+            .nav-btn { 
+                display: inline-block; 
+                padding: 8px 16px; 
+                font-size: 0.7rem; 
+            }
             .slider-btn { opacity: 1; background: rgba(0,0,0,0.6); } /* Flechas siempre visibles en celu */
         }
     </style>
@@ -143,7 +147,7 @@
         </a>
         <div class="nav-controls">
             <button id="langBtn" class="lang-btn" onclick="toggleLang()">EN</button>
-            <a href="mailto:franco@ruvistudio.com" class="nav-btn">
+            <a href="mailto:info@ruvistudio.com" class="nav-btn">
                 <span class="es">Contactar</span>
                 <span class="en">Start a Project</span>
             </a>
@@ -385,7 +389,7 @@
         <p class="es">RUVI STUDIO</p>
         <p class="en">RUVI STUDIO</p>
         <div>
-            <a href="mailto:franco@ruvistudio.com">franco@ruvistudio.com</a>
+            <a href="mailto:info@ruvistudio.com">info@ruvistudio.com</a>
             <a href="https://ruvistudio.com">ruvistudio.com</a>
         </div>
     </footer>
