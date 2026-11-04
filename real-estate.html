@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUVI Real Estate | Contenido inmobiliario con IA</title>
+    <meta name="description" content="Staging virtual, vuelos de drone sobre renders y recorridos cinematográficos con IA para inmobiliarias y desarrolladoras. Vendé antes, sin rodaje.">
+    <meta property="og:title" content="RUVI Real Estate | Contenido inmobiliario con IA">
+    <meta property="og:description" content="Mostrá edificios que todavía no existen y deptos vacíos como si ya estuvieran habitados.">
+    <meta property="og:image" content="videos/re-drone.jpg">
+
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== NAV ===== -->
+    <nav>
+        <a href="index.html"><img src="logo.png" alt="RUVI Studio" class="logo-img"></a>
+        <ul class="nav-links">
+            <li><a href="index.html"><span class="es">← RUVI Studio</span><span class="en">← RUVI Studio</span></a></li>
+            <li><a href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a></li>
+            <li><a href="#ejemplos"><span class="es">Ejemplos</span><span class="en">Examples</span></a></li>
+            <li><a href="#packs">Packs</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button id="langBtn" class="lang-btn" onclick="toggleLang()" aria-label="Cambiar idioma / Change language">EN</button>
+            <a href="mailto:info@ruvistudio.com?subject=RUVI%20Real%20Estate" class="nav-btn">
+                <span class="es">Cotizar</span><span class="en">Get a Quote</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO con video ===== -->
+    <section class="hero">
+        <video class="hero-video" data-autoplay muted loop playsinline preload="auto" poster="videos/re-drone.jpg">
+            <source src="videos/re-drone.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <p class="eyebrow">RUVI REAL ESTATE</p>
+        <h1 class="hero-title sm">
+            <div class="es">VENDÉ LO QUE</div>
+            <div class="es outline">TODAVÍA NO EXISTE</div>
+            <div class="en">SELL WHAT</div>
+            <div class="en outline">DOESN'T EXIST YET</div>
+        </h1>
+        <p class="hero-desc es">Contenido inmobiliario con IA y acabado cinematográfico: <strong>vuelos de drone sobre renders</strong>, <strong>staging virtual</strong> y <strong>recorridos</strong> de propiedades. Sin rodaje, sin muebles, sin esperar a que termine la obra.</p>
+        <p class="hero-desc en">AI real estate content with a cinematic finish: <strong>drone flights over renders</strong>, <strong>virtual staging</strong> and property <strong>walkthroughs</strong>. No shoot, no furniture, no waiting for construction to finish.</p>
+        <div class="btn-row">
+            <a href="#servicios" class="btn solid"><span class="es">Ver ejemplos en video</span><span class="en">Watch video examples</span></a>
+            <a href="mailto:info@ruvistudio.com?subject=RUVI%20Real%20Estate" class="btn"><span class="es">Quiero cotizar</span><span class="en">Get a quote</span></a>
+        </div>
+    </section>
+
+    <!-- ===== EL PLUS ===== -->
+    <section class="container-dark">
+        <div class="section-header reveal">
+            <p class="kicker es">EL PLUS PARA EL MERCADO INMOBILIARIO</p>
+            <p class="kicker en">THE EDGE FOR REAL ESTATE</p>
+            <h2 class="es">Una propiedad no se vende por metros. Se vende por cómo se siente vivir ahí.</h2>
+            <h2 class="en">A property doesn't sell by square meters. It sells by how living there feels.</h2>
+            <p class="lead es">Las fotos de un depto vacío o un render estático no generan deseo. Nosotros convertimos ese material en piezas que hacen que el comprador se imagine adentro.</p>
+            <p class="lead en">Photos of an empty unit or a static render don't create desire. We turn that material into pieces that make buyers picture themselves inside.</p>
+        </div>
+
+        <div class="benefits es reveal">
+            <div class="benefit"><div class="big">Preventa</div><h4>Vendé desde el pozo</h4><p>Mostrá el edificio terminado, con su entorno y su vista, cuando todavía es un plano o un render.</p></div>
+            <div class="benefit"><div class="big">0</div><h4>Rodajes, muebles o mudanzas</h4><p>Partimos de fotos, planos o renders que ya tenés. Nada de alquilar equipos ni coordinar visitas.</p></div>
+            <div class="benefit"><div class="big">×N</div><h4>Un ambiente, muchos estilos</h4><p>El mismo living decorado nórdico, industrial o clásico, según a quién le estés vendiendo.</p></div>
+            <div class="benefit"><div class="big">9:16</div><h4>Listo para redes</h4><p>Entregamos en vertical y horizontal: Reels, TikTok, portales, web y presentaciones.</p></div>
+        </div>
+        <div class="benefits en reveal">
+            <div class="benefit"><div class="big">Pre-sale</div><h4>Sell off-plan</h4><p>Show the finished building, its surroundings and its view while it's still a plan or a render.</p></div>
+            <div class="benefit"><div class="big">0</div><h4>Shoots, furniture or moves</h4><p>We start from the photos, plans or renders you already have. No gear rental or site visits.</p></div>
+            <div class="benefit"><div class="big">×N</div><h4>One room, many styles</h4><p>The same living room styled Nordic, industrial or classic, depending on who you're selling to.</p></div>
+            <div class="benefit"><div class="big">9:16</div><h4>Social-ready</h4><p>Delivered vertical and horizontal: Reels, TikTok, listing portals, web and presentations.</p></div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICIOS CON VIDEO ===== -->
+    <section class="container" id="servicios">
+        <div class="section-header reveal">
+            <p class="kicker es">SERVICIOS</p>
+            <p class="kicker en">SERVICES</p>
+            <h2 class="es">Lo que podemos hacer con tu propiedad</h2>
+            <h2 class="en">What we can do with your property</h2>
+        </div>
+
+        <!-- 01 STAGING -->
+        <div class="showcase reveal">
+            <div class="showcase-media">
+                <video data-autoplay muted loop playsinline preload="metadata" poster="videos/re-staging.jpg">
+                    <source src="videos/re-staging.mp4" type="video/mp4">
+                </video>
+                <span class="live es">Ejemplo real</span><span class="live en">Real example</span>
+            </div>
+            <div class="showcase-text">
+                <span class="num">01</span>
+                <div class="es">
+                    <h3>Staging virtual en timelapse</h3>
+                    <p>Partimos de la foto de un ambiente vacío y lo amueblamos frente a cámara, como si un equipo lo decorara en segundos. El comprador ve el antes y el después en una sola pieza.</p>
+                    <ul>
+                        <li>Unos 10 segundos por ambiente</li>
+                        <li>Ideal en carrusel: 6–7 ambientes, cada uno con un estilo distinto</li>
+                        <li><em>Lo que necesitamos:</em> fotos del depto vacío</li>
+                    </ul>
+                </div>
+                <div class="en">
+                    <h3>Virtual staging timelapse</h3>
+                    <p>We start from a photo of an empty room and furnish it on camera, as if a crew decorated it in seconds. Buyers see the before and after in one piece.</p>
+                    <ul>
+                        <li>About 10 seconds per room</li>
+                        <li>Great as a carousel: 6–7 rooms, each in a different style</li>
+                        <li><em>What we need:</em> photos of the empty unit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 02 DRONE -->
+        <div class="showcase reverse reveal">
+            <div class="showcase-media">
+                <video data-autoplay muted loop playsinline preload="metadata" poster="videos/re-drone.jpg">
+                    <source src="videos/re-drone.mp4" type="video/mp4">
+                </video>
+                <span class="live es">Ejemplo real</span><span class="live en">Real example</span>
+            </div>
+            <div class="showcase-text">
+                <span class="num">02</span>
+                <div class="es">
+                    <h3>Vuelo de drone sobre renders</h3>
+                    <p>Un vuelo cinematográfico alrededor de un edificio que todavía no se construyó: fachada, amenities, entorno y vista, con luz de golden hour.</p>
+                    <ul>
+                        <li>Pensado para preventas y lanzamientos de emprendimientos</li>
+                        <li>Sirve para redes, web del proyecto y sala de ventas</li>
+                        <li><em>Lo que necesitamos:</em> renders o imágenes del proyecto y la ubicación</li>
+                    </ul>
+                </div>
+                <div class="en">
+                    <h3>Drone flight over renders</h3>
+                    <p>A cinematic flight around a building that hasn't been built yet: façade, amenities, surroundings and view, in golden-hour light.</p>
+                    <ul>
+                        <li>Built for pre-sales and project launches</li>
+                        <li>Works for social, project website and sales office</li>
+                        <li><em>What we need:</em> project renders or images and the location</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 03 RECORRIDO -->
+        <div class="showcase reveal">
+            <div class="showcase-media">
+                <video data-autoplay muted loop playsinline preload="metadata" poster="videos/re-recorrido.jpg">
+                    <source src="videos/re-recorrido.mp4" type="video/mp4">
+                </video>
+                <span class="live es">Ejemplo real</span><span class="live en">Real example</span>
+            </div>
+            <div class="showcase-text">
+                <span class="num">03</span>
+                <div class="es">
+                    <h3>Recorrido cámara en mano</h3>
+                    <p>Un paseo natural por la propiedad, como si el comprador estuviera caminándola: del living al balcón, con cortinas al viento y la vista de fondo.</p>
+                    <ul>
+                        <li>Para deptos existentes o a construir</li>
+                        <li>Formato perfecto para Reels y TikTok</li>
+                        <li><em>Lo que necesitamos:</em> fotos de cada ambiente o renders interiores</li>
+                    </ul>
+                </div>
+                <div class="en">
+                    <h3>Handheld walkthrough</h3>
+                    <p>A natural walk through the property, as if the buyer were there: from the living room to the balcony, curtains in the breeze and the view behind.</p>
+                    <ul>
+                        <li>For existing or off-plan units</li>
+                        <li>Perfect format for Reels and TikTok</li>
+                        <li><em>What we need:</em> photos of each room or interior renders</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 04 EDICIÓN + REDES -->
+        <div class="showcase reverse reveal">
+            <div class="showcase-media media-placeholder">
+                <div class="big outline">+ REDES</div>
+                <small class="es">Edición · Estrategia · Performance</small>
+                <small class="en">Editing · Strategy · Performance</small>
+            </div>
+            <div class="showcase-text">
+                <span class="num">04</span>
+                <div class="es">
+                    <h3>Edición y estrategia de redes</h3>
+                    <p>Si ya tenés videos, los editamos con ritmo, sonido y gráficas para que funcionen en redes. Y si querés ir más allá, nos ocupamos de la estrategia completa del perfil de la inmobiliaria.</p>
+                    <ul>
+                        <li>Edición de material propio (tours, entrevistas, obra)</li>
+                        <li>Calendario de publicaciones y formatos</li>
+                        <li>Medición de consultas, alcance y retención</li>
+                    </ul>
+                </div>
+                <div class="en">
+                    <h3>Editing & social strategy</h3>
+                    <p>If you already have footage, we edit it with rhythm, sound and graphics so it works on social. And if you want to go further, we handle the agency profile's full strategy.</p>
+                    <ul>
+                        <li>Editing your own footage (tours, interviews, construction)</li>
+                        <li>Posting calendar and formats</li>
+                        <li>Tracking leads, reach and retention</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EJEMPLOS DE USO ===== -->
+    <section class="container-dark" id="ejemplos">
+        <div class="section-header reveal">
+            <p class="kicker es">CASOS DE USO</p>
+            <p class="kicker en">USE CASES</p>
+            <h2 class="es">¿Para quién es?</h2>
+            <h2 class="en">Who is it for?</h2>
+            <p class="lead es">Ejemplos de cómo lo aplicamos según el tipo de cliente.</p>
+            <p class="lead en">Examples of how we apply it by type of client.</p>
+        </div>
+
+        <div class="examples es">
+            <article class="example reveal">
+                <span class="tag">Desarrolladora</span>
+                <h4>Una torre frente al mar en etapa de preventa</h4>
+                <dl>
+                    <dt>Situación</dt><dd>El edificio es un render. Hay que vender unidades antes de que empiece la obra.</dd>
+                    <dt>Qué hacemos</dt><dd>Vuelo de drone de 20–30 s sobre el render, con entorno real y vista al mar + 3 cortes verticales para pauta.</dd>
+                    <dt>Dónde se usa</dt><dd>Lanzamiento en redes, web del proyecto, pantalla de la sala de ventas.</dd>
+                </dl>
+            </article>
+            <article class="example reveal">
+                <span class="tag">Inmobiliaria</span>
+                <h4>Un 3 ambientes vacío que no despierta consultas</h4>
+                <dl>
+                    <dt>Situación</dt><dd>Las fotos muestran paredes blancas y piso. Nadie se imagina viviendo ahí.</dd>
+                    <dt>Qué hacemos</dt><dd>Carrusel de staging virtual: 6–7 ambientes de 5–6 s cada uno, con estilos distintos + un recorrido cámara en mano.</dd>
+                    <dt>Dónde se usa</dt><dd>Publicación en Instagram, ficha del portal y envío por WhatsApp a interesados.</dd>
+                </dl>
+            </article>
+            <article class="example reveal">
+                <span class="tag">Broker / Agente</span>
+                <h4>Un agente que quiere que su perfil sea su vidriera</h4>
+                <dl>
+                    <dt>Situación</dt><dd>Muchas propiedades por mes, poco tiempo y un feed que no se diferencia del resto.</dd>
+                    <dt>Qué hacemos</dt><dd>Pack mensual: piezas por propiedad + edición de su material + estrategia y estética del perfil.</dd>
+                    <dt>Dónde se usa</dt><dd>Instagram y TikTok del agente, con medición mensual de consultas.</dd>
+                </dl>
+            </article>
+        </div>
+
+        <div class="examples en">
+            <article class="example reveal">
+                <span class="tag">Developer</span>
+                <h4>An oceanfront tower in pre-sale</h4>
+                <dl>
+                    <dt>Situation</dt><dd>The building is a render. Units need to sell before construction starts.</dd>
+                    <dt>What we do</dt><dd>20–30 s drone flight over the render, with real surroundings and ocean view + 3 vertical cuts for ads.</dd>
+                    <dt>Where it's used</dt><dd>Social launch, project website, sales office screen.</dd>
+                </dl>
+            </article>
+            <article class="example reveal">
+                <span class="tag">Agency</span>
+                <h4>An empty 2-bedroom that gets no inquiries</h4>
+                <dl>
+                    <dt>Situation</dt><dd>Photos show white walls and floors. Nobody pictures themselves living there.</dd>
+                    <dt>What we do</dt><dd>Virtual staging carousel: 6–7 rooms of 5–6 s each, in different styles + a handheld walkthrough.</dd>
+                    <dt>Where it's used</dt><dd>Instagram post, listing portal and WhatsApp follow-ups.</dd>
+                </dl>
+            </article>
+            <article class="example reveal">
+                <span class="tag">Broker / Agent</span>
+                <h4>An agent who wants their profile to be their storefront</h4>
+                <dl>
+                    <dt>Situation</dt><dd>Many listings a month, little time and a feed that looks like everyone else's.</dd>
+                    <dt>What we do</dt><dd>Monthly pack: pieces per listing + editing of their footage + profile strategy and aesthetics.</dd>
+                    <dt>Where it's used</dt><dd>The agent's Instagram and TikTok, with monthly lead tracking.</dd>
+                </dl>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== PACKS ===== -->
+    <section class="container" id="packs">
+        <div class="section-header reveal">
+            <p class="kicker">PACKS</p>
+            <h2 class="es">Elegí cómo arrancar</h2>
+            <h2 class="en">Choose how to start</h2>
+            <p class="lead es">Precios en USD. Trabajamos con clientes de Argentina, Latinoamérica, España y EE.UU.</p>
+            <p class="lead en">Prices in USD. We work with clients in Argentina, Latin America, Spain and the US.</p>
+        </div>
+
+        <div class="packs es">
+            <div class="pack reveal">
+                <span class="who">Por propiedad</span>
+                <h3>Unidad</h3>
+                <p class="price">Precio a cotizar</p>
+                <ul>
+                    <li>Carrusel de staging virtual (6–7 ambientes)</li>
+                    <li>1 recorrido cámara en mano</li>
+                    <li>Entrega vertical y horizontal</li>
+                </ul>
+                <a href="mailto:info@ruvistudio.com?subject=Pack%20Unidad%20-%20RUVI%20Real%20Estate" class="btn">Consultar</a>
+            </div>
+            <div class="pack featured reveal">
+                <span class="who">Inmobiliarias y agentes</span>
+                <h3>Mensual</h3>
+                <p class="price">Abono mensual a cotizar</p>
+                <ul>
+                    <li>Piezas para varias propiedades por mes</li>
+                    <li>Edición de material propio</li>
+                    <li>Estrategia y estética del perfil</li>
+                    <li>Reporte mensual de performance</li>
+                </ul>
+                <a href="mailto:info@ruvistudio.com?subject=Pack%20Mensual%20-%20RUVI%20Real%20Estate" class="btn solid">Consultar</a>
+            </div>
+            <div class="pack reveal">
+                <span class="who">Desarrolladoras</span>
+                <h3>Lanzamiento</h3>
+                <p class="price">Por proyecto, a cotizar</p>
+                <ul>
+                    <li>Vuelo de drone sobre renders</li>
+                    <li>Recorridos de unidades modelo</li>
+                    <li>Cortes para pauta y sala de ventas</li>
+                    <li>Plan de contenido de preventa</li>
+                </ul>
+                <a href="mailto:info@ruvistudio.com?subject=Pack%20Lanzamiento%20-%20RUVI%20Real%20Estate" class="btn">Consultar</a>
+            </div>
+        </div>
+
+        <div class="packs en">
+            <div class="pack reveal">
+                <span class="who">Per property</span>
+                <h3>Unit</h3>
+                <p class="price">Price on request</p>
+                <ul>
+                    <li>Virtual staging carousel (6–7 rooms)</li>
+                    <li>1 handheld walkthrough</li>
+                    <li>Vertical and horizontal delivery</li>
+                </ul>
+                <a href="mailto:info@ruvistudio.com?subject=Unit%20Pack%20-%20RUVI%20Real%20Estate" class="btn">Ask</a>
+            </div>
+            <div class="pack featured reveal">
+                <span class="who">Agencies & agents</span>
+                <h3>Monthly</h3>
+                <p class="price">Monthly retainer on request</p>
+                <ul>
+                    <li>Pieces for several listings a month</li>
+                    <li>Editing of your own footage</li>
+                    <li>Profile strategy and aesthetics</li>
+                    <li>Monthly performance report</li>
+                </ul>
+                <a href="mailto:info@ruvistudio.com?subject=Monthly%20Pack%20-%20RUVI%20Real%20Estate" class="btn solid">Ask</a>
+            </div>
+            <div class="pack reveal">
+                <span class="who">Developers</span>
+                <h3>Launch</h3>
+                <p class="price">Per project, on request</p>
+                <ul>
+                    <li>Drone flight over renders</li>
+                    <li>Model unit walkthroughs</li>
+                    <li>Cuts for ads and sales office</li>
+                    <li>Pre-sale content plan</li>
+                </ul>
+                <a href="mailto:info@ruvistudio.com?subject=Launch%20Pack%20-%20RUVI%20Real%20Estate" class="btn">Ask</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="container-dark" id="faq">
+        <div class="section-header reveal">
+            <p class="kicker">FAQ</p>
+            <h2 class="es">Preguntas frecuentes</h2>
+            <h2 class="en">Frequently asked questions</h2>
+        </div>
+        <div class="faq es reveal">
+            <details><summary>¿Qué material tengo que mandar?</summary><p>Con fotos de los ambientes (aunque estén vacíos), planos o renders alcanza. Si tenés videos propios, también los usamos.</p></details>
+            <details><summary>¿Hace falta ir a la propiedad o hacer un rodaje?</summary><p>No. Todo se produce a partir del material que nos enviás. Por eso es más rápido y más económico que una producción tradicional.</p></details>
+            <details><summary>¿El comprador sabe que es contenido hecho con IA?</summary><p>Recomendamos siempre aclararlo con una leyenda tipo “Imágenes ilustrativas generadas con IA”. Mantenemos la arquitectura, las aberturas y las dimensiones fieles a la propiedad real: lo que cambia es la ambientación.</p></details>
+            <details><summary>¿Sirve para propiedades fuera de Argentina?</summary><p>Sí. Trabajamos a distancia con inmobiliarias y desarrolladoras de Latinoamérica, España y EE.UU., con precios en USD.</p></details>
+            <details><summary>¿Pueden manejar también las redes de la inmobiliaria?</summary><p>Sí. Además de producir, hacemos consultoría y estrategia de redes: calendario, estética del perfil y medición de resultados.</p></details>
+        </div>
+        <div class="faq en reveal">
+            <details><summary>What material do I need to send?</summary><p>Photos of the rooms (even empty ones), floor plans or renders are enough. If you have your own footage, we use it too.</p></details>
+            <details><summary>Do you need to visit the property or do a shoot?</summary><p>No. Everything is produced from the material you send. That's why it's faster and more affordable than a traditional production.</p></details>
+            <details><summary>Will buyers know it's AI-made content?</summary><p>We always recommend labeling it with a note like “Illustrative images generated with AI”. We keep architecture, openings and dimensions faithful to the real property: only the styling changes.</p></details>
+            <details><summary>Does it work for properties outside Argentina?</summary><p>Yes. We work remotely with agencies and developers across Latin America, Spain and the US, with prices in USD.</p></details>
+            <details><summary>Can you also run the agency's social media?</summary><p>Yes. Beyond production, we do social media consulting and strategy: calendar, profile aesthetics and results tracking.</p></details>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <h2 class="es">Mandanos una foto. Te devolvemos una propiedad que se vende.</h2>
+        <h2 class="en">Send us a photo. We'll send back a property that sells.</h2>
+        <p class="es">Pedí un ejemplo con una de tus propiedades.</p>
+        <p class="en">Ask for a sample with one of your listings.</p>
+        <div class="btn-row" style="margin-bottom:40px">
+            <a href="mailto:info@ruvistudio.com?subject=Quiero%20un%20ejemplo%20-%20RUVI%20Real%20Estate" class="btn solid"><span class="es">Pedir ejemplo</span><span class="en">Request a sample</span></a>
+        </div>
+        <div class="links">
+            <a href="mailto:info@ruvistudio.com">info@ruvistudio.com</a>
+            <a href="https://instagram.com/ruvi.ai" target="_blank" rel="noopener">@ruvi.ai</a>
+            <a href="index.html">RUVI Studio</a>
+        </div>
+        <p class="legal es">Las imágenes y videos de esta página son ilustrativos y fueron generados con IA por RUVI Studio.</p>
+        <p class="legal en">Images and videos on this page are illustrative and were AI-generated by RUVI Studio.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

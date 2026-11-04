@@ -3,431 +3,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RUVI Studio | Synthetic Cinema & Creative Direction</title>
-    
+    <title>RUVI Studio | AI Filmmaking de autor + Estrategia de redes</title>
+    <meta name="description" content="RUVI Studio: AI filmmaking de autor, consultoría y estrategia de redes sociales. No solo producimos piezas: nos ocupamos de que rindan.">
+    <meta property="og:title" content="RUVI Studio | AI Filmmaking de autor + Estrategia de redes">
+    <meta property="og:description" content="Cine sintético, comerciales y estrategia de redes con foco en performance.">
+    <meta property="og:image" content="Foto%2002.jpg">
+
     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-deep: #020202; 
-            --bg-section: #0a0e0b; 
-            --text-main: #f4f0e6;
-            --text-muted: #a3a3a3;
-            --accent-gold: #d9c8aa;
-            --accent-green: #142920;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            font-family: 'DM Sans', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        [lang="es"] .en { display: none !important; }
-        [lang="en"] .es { display: none !important; }
-
-        nav {
-            position: fixed;
-            top: 0; width: 100%; 
-            height: 110px; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(2, 2, 2, 0.85);
-            backdrop-filter: blur(15px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(217, 200, 170, 0.1);
-        }
-        
-        .logo-img { height: 85px; transition: transform 0.3s; }
-        .logo-img:hover { transform: scale(1.05); }
-        
-        .nav-controls {
-            position: absolute; right: 5%;
-            display: flex; align-items: center; gap: 25px;
-        }
-        .lang-btn {
-            background: transparent; border: none; color: var(--text-muted);
-            font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700;
-            cursor: pointer; transition: color 0.3s; letter-spacing: 1px;
-        }
-        .lang-btn:hover { color: var(--accent-gold); }
-        .nav-btn {
-            color: var(--accent-gold); text-decoration: none; font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem; letter-spacing: 2px; border: 1px solid var(--accent-gold);
-            padding: 10px 24px; border-radius: 2px; transition: all 0.3s; text-transform: uppercase;
-        }
-        .nav-btn:hover { background: var(--accent-gold); color: #000; }
-
-        .hero {
-            height: 100vh; display: flex; flex-direction: column; justify-content: center;
-            align-items: center; text-align: center; padding: 0 5%;
-            background: linear-gradient(rgba(2, 2, 2, 0.7), rgba(2, 2, 2, 0.95)), url('Foto%2002.jpg') center/cover no-repeat;
-            margin-top: 110px; 
-        }
-        .hero-title {
-            font-family: 'Montserrat', sans-serif; font-weight: 900;
-            font-size: clamp(3rem, 10vw, 7rem); line-height: 0.95; margin-bottom: 25px; letter-spacing: 1px;
-        }
-        .outline { color: transparent; -webkit-text-stroke: 1px var(--accent-gold); }
-        .hero-desc {
-            max-width: 800px; font-size: 1.3rem; color: var(--text-main); margin-bottom: 10px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.9); font-weight: 400;
-        }
-
-        .container { padding: 120px 5%; background-color: var(--bg-section); }
-        .container-dark { padding: 120px 5%; background-color: var(--bg-deep); }
-        .section-header { margin-bottom: 70px; text-align: center; }
-        .section-header p { color: var(--accent-gold); font-weight: 700; letter-spacing: 4px; font-size: 0.85rem; margin-bottom: 15px;}
-        .section-header h2 { font-family: 'Montserrat', sans-serif; font-size: 3rem; text-transform: uppercase; line-height: 1.1; }
-
-        .vision-section { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .vision-img { width: 100%; border-radius: 2px; box-shadow: 0 30px 60px rgba(0,0,0,0.9); border: 1px solid rgba(255,255,255,0.05); }
-        .vision-text h2 { font-family: 'Montserrat', sans-serif; font-size: 2.8rem; margin-bottom: 30px; line-height: 1.1; }
-        .vision-text p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 25px; line-height: 1.7; }
-        .vision-bullets { margin-top: 30px; border-left: 2px solid var(--accent-gold); padding-left: 20px; }
-        .vision-bullets li { list-style: none; font-family: 'Montserrat', sans-serif; font-size: 1rem; color: var(--text-main); margin-bottom: 10px; letter-spacing: 1px; }
-
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 80px; }
-        .service-box { border-top: 1px solid rgba(217, 200, 170, 0.3); padding-top: 20px; }
-        .service-box h3 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 10px; }
-        .service-box p { color: var(--text-muted); font-size: 1rem; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
-        .card { background: #000; border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.5s ease; display: flex; flex-direction: column; }
-        .card:hover { border-color: var(--accent-gold); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
-        
-        /* SLIDER STYLES */
-        .slider-container { width: 100%; height: 380px; overflow: hidden; position: relative; }
-        .card-tag { position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.8); color: var(--accent-gold); padding: 5px 12px; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; z-index: 10; border: 1px solid var(--accent-gold); }
-        .slider-wrapper { width: 100%; height: 100%; position: relative; }
-        .slide { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease, transform 0.8s ease; }
-        .slide.active { opacity: 0.85; z-index: 2; }
-        .card:hover .slide.active { opacity: 1; transform: scale(1.04); }
-        
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: var(--accent-gold); border: 1px solid rgba(217, 200, 170, 0.2); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; justify-content: center; align-items: center; transition: all 0.3s; opacity: 0; }
-        .card:hover .slider-btn { opacity: 1; }
-        .slider-btn:hover { background: var(--accent-gold); color: #000; }
-        .slider-btn.prev { left: 10px; }
-        .slider-btn.next { right: 10px; }
-
-        .card-body { padding: 40px 30px; display: flex; flex-direction: column; flex-grow: 1; z-index: 5; position: relative;}
-        .card-title { font-family: 'Montserrat', sans-serif; font-size: 1.6rem; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; }
-        .card-text { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 30px; flex-grow: 1; }
-        .card-text strong { color: var(--text-main); }
-        .watch-btn { align-self: flex-start; color: var(--text-main); text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 2px; border-bottom: 1px solid var(--accent-gold); padding-bottom: 5px; text-transform: uppercase; transition: color 0.3s; }
-        .watch-btn:hover { color: var(--accent-gold); }
-
-        footer { text-align: center; padding: 120px 5%; background: #000; border-top: 1px solid rgba(217, 200, 170, 0.1); }
-        footer h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 40px; color: var(--accent-gold); line-height: 1.1; }
-        footer p { color: var(--text-muted); margin-bottom: 30px; font-size: 1.2rem; }
-        footer a { color: var(--text-main); text-decoration: none; margin: 0 15px; letter-spacing: 1px; font-size: 1rem; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: border-color 0.3s;}
-        footer a:hover { border-color: var(--accent-gold); }
-
-        @media (max-width: 900px) {
-            .vision-section { grid-template-columns: 1fr; gap: 40px; }
-            .nav-btn { 
-                display: inline-block; 
-                padding: 8px 16px; 
-                font-size: 0.7rem; 
-            }
-            .slider-btn { opacity: 1; background: rgba(0,0,0,0.6); } /* Flechas siempre visibles en celu */
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <!-- ===== NAV ===== -->
     <nav>
-        <a href="#">
-            <img src="logo.png" alt="RUVI Studio Logo" class="logo-img">
-        </a>
+        <a href="index.html"><img src="logo.png" alt="RUVI Studio" class="logo-img"></a>
+        <ul class="nav-links">
+            <li><a href="#enfoque"><span class="es">Enfoque</span><span class="en">Approach</span></a></li>
+            <li><a href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a></li>
+            <li><a href="#ejemplos"><span class="es">Ejemplos</span><span class="en">Examples</span></a></li>
+            <li><a href="#trabajos"><span class="es">Trabajos</span><span class="en">Work</span></a></li>
+            <li><a href="real-estate.html" class="highlight">RUVI Real Estate</a></li>
+        </ul>
         <div class="nav-controls">
-            <button id="langBtn" class="lang-btn" onclick="toggleLang()">EN</button>
+            <button id="langBtn" class="lang-btn" onclick="toggleLang()" aria-label="Cambiar idioma / Change language">EN</button>
             <a href="mailto:info@ruvistudio.com" class="nav-btn">
-                <span class="es">Contactar</span>
-                <span class="en">Start a Project</span>
+                <span class="es">Contactar</span><span class="en">Start a Project</span>
             </a>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-title">
+    <!-- ===== HERO ===== -->
+    <section class="hero hero-bg-img">
+        <p class="eyebrow">AI Filmmaking · Strategy · Performance</p>
+        <h1 class="hero-title">
             <div class="outline">SYNTHETIC</div>
             <div class="es">CINE</div>
             <div class="en">CINEMA</div>
+        </h1>
+        <p class="hero-desc es">Hacemos <strong>AI filmmaking de autor</strong> y nos quedamos después del estreno: estrategia, consultoría y transformación de redes para que cada pieza <strong>rinda</strong>, no solo que se vea bien.</p>
+        <p class="hero-desc en">We make <strong>auteur AI filmmaking</strong> and we stay after the premiere: strategy, consulting and social media transformation so every piece <strong>performs</strong>, not just looks good.</p>
+        <div class="btn-row">
+            <a href="#trabajos" class="btn solid"><span class="es">Ver trabajos</span><span class="en">See work</span></a>
+            <a href="real-estate.html" class="btn"><span class="es">RUVI Real Estate →</span><span class="en">RUVI Real Estate →</span></a>
         </div>
-        <p class="hero-desc es">Cine sintético, comerciales de alto impacto y dirección visual.</p>
-        <p class="hero-desc en">Synthetic cinema, high-impact commercials, and visual direction.</p>
     </section>
 
+    <!-- ===== VISIÓN ===== -->
     <section class="container-dark vision-section">
-        <div>
-            <img src="FOTO%2001.jpg" alt="RUVI Studio Workspace" class="vision-img">
+        <div class="reveal">
+            <img src="FOTO%2001.jpg" alt="RUVI Studio" class="vision-img" loading="lazy">
         </div>
-        <div class="vision-text">
-            <h2 class="es">El infinito visual de la IA con el rigor de la posproducción tradicional.</h2>
-            <h2 class="en">The infinite visual potential of AI with traditional post-production rigor.</h2>
-            
+        <div class="vision-text reveal">
             <div class="es">
-                <p>No generamos videos automáticos: diseñamos universos narrativos con dirección de arte, montaje rítmico y acabado cinematográfico real.</p>
+                <h2>No subimos piezas. Construimos resultados.</h2>
+                <p>Cualquiera puede generar un video con IA. Lo difícil es que tenga <strong>mirada propia</strong>, que respete la marca y que mueva la aguja en las redes.</p>
+                <p>Por eso combinamos dos cosas que casi nunca vienen juntas: <strong>dirección cinematográfica</strong> (arte, montaje, sonido y acabado de posproducción real) y <strong>criterio de performance</strong> (qué publicar, cuándo, en qué formato y cómo medirlo).</p>
                 <ul class="vision-bullets">
-                    <li>ITERACIÓN VISUAL</li>
-                    <li>CRITERIO CINEMATOGRÁFICO</li>
-                    <li>ESCALABILIDAD B2B</li>
+                    <li>CINE SINTÉTICO DE AUTOR</li>
+                    <li>ESTRATEGIA Y CONSULTORÍA DE REDES</li>
+                    <li>MEDICIÓN E ITERACIÓN CONSTANTE</li>
                 </ul>
             </div>
-            
             <div class="en">
-                <p>We don't generate automatic videos: we design narrative universes with art direction, rhythmic editing, and a real cinematic finish.</p>
+                <h2>We don't just post pieces. We build results.</h2>
+                <p>Anyone can generate an AI video. The hard part is giving it <strong>a point of view</strong>, staying on-brand and actually moving the needle on social.</p>
+                <p>That's why we combine two things that rarely come together: <strong>cinematic direction</strong> (art, editing, sound and real post-production finish) and <strong>performance thinking</strong> (what to post, when, in which format and how to measure it).</p>
                 <ul class="vision-bullets">
-                    <li>VISUAL ITERATION</li>
-                    <li>CINEMATIC CRAFT</li>
-                    <li>B2B SCALABILITY</li>
+                    <li>AUTEUR SYNTHETIC CINEMA</li>
+                    <li>SOCIAL STRATEGY & CONSULTING</li>
+                    <li>CONSTANT MEASUREMENT & ITERATION</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section class="container">
-        <div class="section-header">
-            <p class="es">LO QUE HACEMOS</p>
-            <p class="en">WHAT WE DO</p>
-            <h2 class="es">Líneas de Servicio</h2>
-            <h2 class="en">Service Lines</h2>
+    <!-- ===== ENFOQUE / PROCESO ===== -->
+    <section class="container" id="enfoque">
+        <div class="section-header reveal">
+            <p class="kicker es">CÓMO TRABAJAMOS</p>
+            <p class="kicker en">HOW WE WORK</p>
+            <h2 class="es">Del diagnóstico al reel que funciona</h2>
+            <h2 class="en">From diagnosis to the reel that works</h2>
+            <p class="lead es">Una pieza linda que nadie ve es un gasto. Una pieza con estrategia es una inversión.</p>
+            <p class="lead en">A beautiful piece nobody sees is an expense. A piece with strategy is an investment.</p>
         </div>
 
-        <div class="services-grid es">
-            <div class="service-box">
-                <h3>Social Impact</h3>
-                <p>Piezas cortas, Fake OOH y Reels para lanzamientos de producto.</p>
+        <div class="steps es reveal">
+            <div class="step"><h4>Diagnóstico</h4><p>Auditamos tus cuentas: qué contenido rinde, qué no, contra quién competís y dónde está la oportunidad.</p></div>
+            <div class="step"><h4>Estrategia</h4><p>Definimos pilares de contenido, tono, estética del feed, formatos y frecuencia de publicación.</p></div>
+            <div class="step"><h4>Producción de autor</h4><p>Creamos las piezas con IA y dirección cinematográfica: guion, arte, montaje, sonido y acabado.</p></div>
+            <div class="step"><h4>Medición</h4><p>Leemos los números (retención, alcance, guardados, consultas) y ajustamos la próxima tanda.</p></div>
+        </div>
+        <div class="steps en reveal">
+            <div class="step"><h4>Diagnosis</h4><p>We audit your accounts: what content performs, what doesn't, who you compete with and where the opportunity is.</p></div>
+            <div class="step"><h4>Strategy</h4><p>We define content pillars, tone, feed aesthetics, formats and posting frequency.</p></div>
+            <div class="step"><h4>Auteur production</h4><p>We create the pieces with AI and cinematic direction: script, art, editing, sound and finish.</p></div>
+            <div class="step"><h4>Measurement</h4><p>We read the numbers (retention, reach, saves, leads) and adjust the next batch.</p></div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICIOS (2 PILARES) ===== -->
+    <section class="container-dark" id="servicios">
+        <div class="section-header reveal">
+            <p class="kicker es">LO QUE HACEMOS</p>
+            <p class="kicker en">WHAT WE DO</p>
+            <h2 class="es">Dos áreas, un mismo objetivo</h2>
+            <h2 class="en">Two areas, one goal</h2>
+        </div>
+
+        <div class="pillars es">
+            <div class="pillar reveal">
+                <div class="pillar-num outline">01</div>
+                <h3>AI Filmmaking de autor</h3>
+                <p>Piezas con identidad propia, pensadas para redes y TV. Nada de videos automáticos.</p>
+                <ul>
+                    <li><b>Social Impact</b><span>Reels, piezas cortas y Fake OOH para lanzamientos de producto.</span></li>
+                    <li><b>Brand Films</b><span>Campañas narrativas centrales con acabado de cine comercial.</span></li>
+                    <li><b>Comerciales para TV y digital</b><span>Spots completos, con jingle y sonido original si hace falta.</span></li>
+                    <li><b>Visualizers</b><span>Entornos digitales para videoclips y pantallas LED en vivo.</span></li>
+                </ul>
             </div>
-            <div class="service-box">
-                <h3>Brand Films</h3>
-                <p>Campañas narrativas centrales con acabado de cine comercial.</p>
-            </div>
-            <div class="service-box">
-                <h3>Visualizers</h3>
-                <p>Entornos digitales para videoclips y pantallas LED en vivo.</p>
+            <div class="pillar reveal">
+                <div class="pillar-num outline">02</div>
+                <h3>Consultoría y estrategia de redes</h3>
+                <p>Nos ocupamos de que el contenido trabaje para tu negocio, no al revés.</p>
+                <ul>
+                    <li><b>Auditoría de cuentas</b><span>Análisis de métricas, competencia y oportunidades de crecimiento.</span></li>
+                    <li><b>Estrategia de contenido</b><span>Pilares, calendario, formatos y tono de voz de la marca.</span></li>
+                    <li><b>Transformación de perfil</b><span>Rediseño de la estética y la propuesta del feed, de punta a punta.</span></li>
+                    <li><b>Reporting y optimización</b><span>Informes mensuales claros y ajustes basados en datos.</span></li>
+                </ul>
             </div>
         </div>
 
-        <div class="services-grid en">
-            <div class="service-box">
-                <h3>Social Impact</h3>
-                <p>Short-form pieces, Fake OOH, and Reels for product launches.</p>
+        <div class="pillars en">
+            <div class="pillar reveal">
+                <div class="pillar-num outline">01</div>
+                <h3>Auteur AI Filmmaking</h3>
+                <p>Pieces with their own identity, made for social and TV. No automatic videos.</p>
+                <ul>
+                    <li><b>Social Impact</b><span>Reels, short-form pieces and Fake OOH for product launches.</span></li>
+                    <li><b>Brand Films</b><span>Core narrative campaigns with a commercial cinema finish.</span></li>
+                    <li><b>TV & digital commercials</b><span>Full spots, with original jingle and sound when needed.</span></li>
+                    <li><b>Visualizers</b><span>Digital environments for music videos and live LED screens.</span></li>
+                </ul>
             </div>
-            <div class="service-box">
-                <h3>Brand Films</h3>
-                <p>Core narrative campaigns with a commercial cinema finish.</p>
-            </div>
-            <div class="service-box">
-                <h3>Visualizers</h3>
-                <p>Digital environments for music videos and live LED screens.</p>
+            <div class="pillar reveal">
+                <div class="pillar-num outline">02</div>
+                <h3>Social media consulting & strategy</h3>
+                <p>We make sure content works for your business, not the other way around.</p>
+                <ul>
+                    <li><b>Account audit</b><span>Metrics, competitor and growth-opportunity analysis.</span></li>
+                    <li><b>Content strategy</b><span>Pillars, calendar, formats and brand tone of voice.</span></li>
+                    <li><b>Profile transformation</b><span>End-to-end redesign of the feed's aesthetics and proposition.</span></li>
+                    <li><b>Reporting & optimization</b><span>Clear monthly reports and data-driven adjustments.</span></li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section class="container-dark">
-        <div class="section-header">
-            <p class="es">TRABAJOS DESTACADOS</p>
-            <p class="en">SELECTED WORK</p>
+    <!-- ===== EJEMPLOS ===== -->
+    <section class="container" id="ejemplos">
+        <div class="section-header reveal">
+            <p class="kicker es">EN LA PRÁCTICA</p>
+            <p class="kicker en">IN PRACTICE</p>
+            <h2 class="es">Así lo aplicaríamos a tu marca</h2>
+            <h2 class="en">How we'd apply it to your brand</h2>
+            <p class="lead es">Tres ejemplos de cómo combinamos estrategia + producción según el rubro.</p>
+            <p class="lead en">Three examples of how we combine strategy + production by industry.</p>
+        </div>
+
+        <div class="examples es">
+            <article class="example reveal">
+                <span class="tag">Alimentos y bebidas</span>
+                <h4>Una bebida que quiere volverse “la de moda”</h4>
+                <dl>
+                    <dt>El problema</dt><dd>Buen producto, feed lleno de fotos de packshot que no generan conversación.</dd>
+                    <dt>Estrategia</dt><dd>Construir un universo de marca con estética propia y un sonido reconocible que se repita en cada pieza.</dd>
+                    <dt>Producción</dt><dd>Fake commercial con jingle original + cortes verticales de 6–15 s para Reels y TikTok.</dd>
+                    <dt>Qué medimos</dt><dd>Retención en los primeros 3 segundos, compartidos y uso del audio.</dd>
+                </dl>
+                <p class="ref">Referencia: <a href="https://youtu.be/ayEPDruBNKI" target="_blank" rel="noopener">VUZ Soda</a></p>
+            </article>
+            <article class="example reveal">
+                <span class="tag">Fintech</span>
+                <h4>Una app financiera que necesita emocionar, no solo explicar</h4>
+                <dl>
+                    <dt>El problema</dt><dd>Contenido técnico y frío: tasas, gráficos y beneficios que nadie termina de mirar.</dd>
+                    <dt>Estrategia</dt><dd>Pasar de “qué hacemos” a “qué sentís”: microdramas con tensión y resolución.</dd>
+                    <dt>Producción</dt><dd>Brand film de una sola escena + serie de piezas cortas con la misma atmósfera.</dd>
+                    <dt>Qué medimos</dt><dd>Reproducciones completas, guardados y clics a la app.</dd>
+                </dl>
+                <p class="ref">Referencia: <a href="https://youtu.be/eiHfpl1FxrQ" target="_blank" rel="noopener">Huston</a></p>
+            </article>
+            <article class="example reveal">
+                <span class="tag">Moda y estilo de vida</span>
+                <h4>Una marca de ropa que quiere un perfil que se note</h4>
+                <dl>
+                    <dt>El problema</dt><dd>Un feed parecido al de la competencia y producciones de fotos caras cada temporada.</dd>
+                    <dt>Estrategia</dt><dd>Transformar el perfil: nueva estética, grilla planificada y contenido de identidad.</dd>
+                    <dt>Producción</dt><dd>Reels con transiciones entre looks, épocas y escenarios imposibles de rodear en la vida real.</dd>
+                    <dt>Qué medimos</dt><dd>Crecimiento de seguidores, visitas al perfil y consultas por DM.</dd>
+                </dl>
+                <p class="ref">Referencia: <a href="https://youtu.be/c0Q_Xpwpi2w" target="_blank" rel="noopener">Choose Your Style</a></p>
+            </article>
+        </div>
+
+        <div class="examples en">
+            <article class="example reveal">
+                <span class="tag">Food & beverage</span>
+                <h4>A drink that wants to become “the trendy one”</h4>
+                <dl>
+                    <dt>The problem</dt><dd>Great product, feed full of packshots that spark no conversation.</dd>
+                    <dt>Strategy</dt><dd>Build a brand universe with its own aesthetic and a recognizable sound repeated in every piece.</dd>
+                    <dt>Production</dt><dd>Fake commercial with original jingle + 6–15 s vertical cuts for Reels and TikTok.</dd>
+                    <dt>What we measure</dt><dd>3-second retention, shares and audio usage.</dd>
+                </dl>
+                <p class="ref">Reference: <a href="https://youtu.be/ayEPDruBNKI" target="_blank" rel="noopener">VUZ Soda</a></p>
+            </article>
+            <article class="example reveal">
+                <span class="tag">Fintech</span>
+                <h4>A finance app that needs to move people, not just explain</h4>
+                <dl>
+                    <dt>The problem</dt><dd>Cold, technical content: rates, charts and benefits nobody watches to the end.</dd>
+                    <dt>Strategy</dt><dd>Shift from “what we do” to “how it feels”: micro-dramas with tension and release.</dd>
+                    <dt>Production</dt><dd>Single-scene brand film + a series of short pieces with the same atmosphere.</dd>
+                    <dt>What we measure</dt><dd>Completed views, saves and app clicks.</dd>
+                </dl>
+                <p class="ref">Reference: <a href="https://youtu.be/eiHfpl1FxrQ" target="_blank" rel="noopener">Huston</a></p>
+            </article>
+            <article class="example reveal">
+                <span class="tag">Fashion & lifestyle</span>
+                <h4>A clothing brand that wants a profile that stands out</h4>
+                <dl>
+                    <dt>The problem</dt><dd>A feed that looks like the competition and expensive photo shoots every season.</dd>
+                    <dt>Strategy</dt><dd>Transform the profile: new aesthetic, planned grid and identity-driven content.</dd>
+                    <dt>Production</dt><dd>Reels transitioning across looks, eras and settings impossible to shoot in real life.</dd>
+                    <dt>What we measure</dt><dd>Follower growth, profile visits and DM inquiries.</dd>
+                </dl>
+                <p class="ref">Reference: <a href="https://youtu.be/c0Q_Xpwpi2w" target="_blank" rel="noopener">Choose Your Style</a></p>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== BANDA REAL ESTATE ===== -->
+    <section class="re-band">
+        <video data-autoplay muted loop playsinline preload="metadata" poster="videos/re-drone.jpg">
+            <source src="videos/re-drone.mp4" type="video/mp4">
+        </video>
+        <div class="re-band-content reveal">
+            <p class="eyebrow">NUEVO · RUVI REAL ESTATE</p>
+            <div class="es">
+                <h2>Mostrá edificios que todavía no existen.</h2>
+                <p>Vuelos de drone sobre renders, staging virtual de deptos vacíos y recorridos cinematográficos. Contenido inmobiliario que vende, sin rodaje.</p>
+            </div>
+            <div class="en">
+                <h2>Show buildings that don't exist yet.</h2>
+                <p>Drone flights over renders, virtual staging for empty units and cinematic walkthroughs. Real estate content that sells, no shoot required.</p>
+            </div>
+            <div class="btn-row">
+                <a href="real-estate.html" class="btn solid"><span class="es">Conocer RUVI Real Estate</span><span class="en">Explore RUVI Real Estate</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CASOS ===== -->
+    <section class="container-dark" id="trabajos">
+        <div class="section-header reveal">
+            <p class="kicker es">TRABAJOS DESTACADOS</p>
+            <p class="kicker en">SELECTED WORK</p>
             <h2 class="es">Casos de Estudio</h2>
             <h2 class="en">Case Studies</h2>
         </div>
 
         <div class="grid">
-            
             <!-- 1. DIVER 1921 -->
-            <div class="card">
+            <div class="card reveal">
                 <div class="slider-container">
                     <span class="card-tag es">Reel Narrativo</span>
                     <span class="card-tag en">Narrative Reel</span>
-                    <button class="slider-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+                    <button class="slider-btn prev" onclick="moveSlide(this, -1)" aria-label="Anterior">&#10094;</button>
+                    <button class="slider-btn next" onclick="moveSlide(this, 1)" aria-label="Siguiente">&#10095;</button>
                     <div class="slider-wrapper">
-                        <img src="Lavanderia.png" class="slide active" alt="Diver">
-                        <img src="Sushi%20bar.png" class="slide" alt="Diver">
-                        <img src="Telephone.png" class="slide" alt="Diver">
-                        <img src="Pasillo.jpeg" class="slide" alt="Diver">
+                        <img src="Lavanderia.png" class="slide active" alt="Diver 1921" loading="lazy">
+                        <img src="Sushi%20bar.png" class="slide" alt="Diver 1921" loading="lazy">
+                        <img src="Telephone.png" class="slide" alt="Diver 1921" loading="lazy">
+                        <img src="Pasillo.jpeg" class="slide" alt="Diver 1921" loading="lazy">
                     </div>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">DIVER 1921</h3>
                     <div class="card-text es">
-                        <p>Puesta cinematográfica en la que tiene como protagonista a un extravagante buzo, sumido en situaciones de tensión que culminan en acciones absurdamente cotidianas.</p>
-                        <p><br><strong>Estética:</strong> Hiper-pulida donde lo irreal y lo mundano colisionan.</p>
+                        <p>Puesta cinematográfica protagonizada por un extravagante buzo, sumido en situaciones de tensión que terminan en acciones absurdamente cotidianas.</p>
+                        <p><strong>Estética:</strong> hiperpulida, donde lo irreal y lo mundano colisionan.</p>
                     </div>
                     <div class="card-text en">
-                        <p>A cinematic staging featuring an extravagant diver immersed in tense situations that culminate in absurdly mundane actions.</p>
-                        <p><br><strong>Aesthetics:</strong> Hyper-polished where the unreal and mundane collide.</p>
+                        <p>A cinematic staging featuring an extravagant diver immersed in tense situations that end in absurdly mundane actions.</p>
+                        <p><strong>Aesthetics:</strong> hyper-polished, where the unreal and the mundane collide.</p>
                     </div>
-                    <a href="https://youtu.be/rPnYFZ-M8tg" target="_blank" class="watch-btn es">Ver Reel</a>
-                    <a href="https://youtu.be/rPnYFZ-M8tg" target="_blank" class="watch-btn en">Watch Reel</a>
+                    <a href="https://youtu.be/rPnYFZ-M8tg" target="_blank" rel="noopener" class="watch-btn"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></a>
                 </div>
             </div>
 
             <!-- 2. VUZ SODA -->
-            <div class="card">
+            <div class="card reveal">
                 <div class="slider-container">
                     <span class="card-tag es">Reel Comercial</span>
                     <span class="card-tag en">Commercial Reel</span>
-                    <button class="slider-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+                    <button class="slider-btn prev" onclick="moveSlide(this, -1)" aria-label="Anterior">&#10094;</button>
+                    <button class="slider-btn next" onclick="moveSlide(this, 1)" aria-label="Siguiente">&#10095;</button>
                     <div class="slider-wrapper">
-                        <img src="Vuz%20Parlante.jpg" class="slide active" alt="VUZ">
-                        <img src="Vuz%20Skate.jpg" class="slide" alt="VUZ">
-                        <img src="Vuz%20Chico.jpg" class="slide" alt="VUZ">
-                        <img src="Vuz%20Boliche.jpg" class="slide" alt="VUZ">
+                        <img src="Vuz%20Parlante.jpg" class="slide active" alt="VUZ Soda" loading="lazy">
+                        <img src="Vuz%20Skate.jpg" class="slide" alt="VUZ Soda" loading="lazy">
+                        <img src="Vuz%20Chico.jpg" class="slide" alt="VUZ Soda" loading="lazy">
+                        <img src="Vuz%20Boliche.jpg" class="slide" alt="VUZ Soda" loading="lazy">
                     </div>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">VUZ SODA</h3>
                     <div class="card-text es">
-                        <p>Todo el dinamismo de la juventud de los 80s reunida alrededor de una vibrante bebida de moda.</p>
-                        <p><br><strong>Formato:</strong> Fake commercial impulsado por un jingle sintético original y fuerte estética retro urbana.</p>
+                        <p>Todo el dinamismo de la juventud de los 80 reunido alrededor de una bebida vibrante y de moda.</p>
+                        <p><strong>Formato:</strong> fake commercial impulsado por un jingle sintético original y una fuerte estética retro urbana.</p>
                     </div>
                     <div class="card-text en">
                         <p>The dynamism of 80s youth gathered around a vibrant, trendy beverage.</p>
-                        <p><br><strong>Format:</strong> Fake commercial driven by an original synthetic jingle and strong retro urban aesthetics.</p>
+                        <p><strong>Format:</strong> fake commercial driven by an original synthetic jingle and strong retro urban aesthetics.</p>
                     </div>
-                    <a href="https://youtu.be/ayEPDruBNKI" target="_blank" class="watch-btn es">Ver Reel</a>
-                    <a href="https://youtu.be/ayEPDruBNKI" target="_blank" class="watch-btn en">Watch Reel</a>
+                    <a href="https://youtu.be/ayEPDruBNKI" target="_blank" rel="noopener" class="watch-btn"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></a>
                 </div>
             </div>
 
-            <!-- 3. HUSTON (Sin slider, foto única) -->
-            <div class="card">
+            <!-- 3. HUSTON -->
+            <div class="card reveal">
                 <div class="slider-container">
                     <span class="card-tag es">Reel Cinemático</span>
                     <span class="card-tag en">Cinematic Reel</span>
                     <div class="slider-wrapper">
-                        <img src="Astronauta.jpg" class="slide active" alt="Huston">
+                        <img src="Astronauta.jpg" class="slide active" alt="Huston" loading="lazy">
                     </div>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">HUSTON</h3>
                     <div class="card-text es">
-                        <p>Drama compacto en una sola escena. Una pieza que transita un grado de emocionalidad acompañado por una situación llena de tensión.</p>
-                        <p><br><strong>Técnica:</strong> SFX como clave fundamental para crear el clima. Una cabina que genera claustrofobia y liberación.</p>
+                        <p>Drama compacto en una sola escena. Una pieza que recorre un alto grado de emocionalidad en medio de una situación cargada de tensión.</p>
+                        <p><strong>Técnica:</strong> el SFX como clave para crear el clima. Una cabina que genera claustrofobia y liberación.</p>
                     </div>
                     <div class="card-text en">
-                        <p>A compact drama in a single scene. A piece that traverses emotional depth accompanied by a tension-filled situation.</p>
-                        <p><br><strong>Technique:</strong> SFX as the fundamental key to setting the mood. A cabin that generates both claustrophobia and liberation.</p>
+                        <p>A compact drama in a single scene. A piece that travels through deep emotion within a tension-filled situation.</p>
+                        <p><strong>Technique:</strong> SFX as the key to setting the mood. A cabin that generates both claustrophobia and release.</p>
                     </div>
-                    <a href="https://youtu.be/eiHfpl1FxrQ" target="_blank" class="watch-btn es">Ver Reel</a>
-                    <a href="https://youtu.be/eiHfpl1FxrQ" target="_blank" class="watch-btn en">Watch Reel</a>
+                    <a href="https://youtu.be/eiHfpl1FxrQ" target="_blank" rel="noopener" class="watch-btn"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></a>
                 </div>
             </div>
 
             <!-- 4. SAMURAI -->
-            <div class="card">
+            <div class="card reveal">
                 <div class="slider-container">
                     <span class="card-tag es">Reel Cinemático</span>
                     <span class="card-tag en">Cinematic Reel</span>
-                    <button class="slider-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+                    <button class="slider-btn prev" onclick="moveSlide(this, -1)" aria-label="Anterior">&#10094;</button>
+                    <button class="slider-btn next" onclick="moveSlide(this, 1)" aria-label="Siguiente">&#10095;</button>
                     <div class="slider-wrapper">
-                        <img src="SAMURAI%20CASCO.jpeg" class="slide active" alt="Samurai">
-                        <img src="Samurai%20smoking.jpg" class="slide" alt="Samurai">
-                        <img src="Sitting%20Samurai.jpg" class="slide" alt="Samurai">
+                        <img src="SAMURAI%20CASCO.jpeg" class="slide active" alt="Samurai" loading="lazy">
+                        <img src="Samurai%20smoking.jpg" class="slide" alt="Samurai" loading="lazy">
+                        <img src="Sitting%20Samurai.jpg" class="slide" alt="Samurai" loading="lazy">
                     </div>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">SAMURAI</h3>
                     <div class="card-text es">
                         <p>La calma inquebrantable de un guerrero imponente en la tensión previa al combate.</p>
-                        <p><br><strong>Técnica:</strong> Fuerte contraste rítmico entre la edición frenética y los movimientos serenos. Iluminación dramática y escenarios inmersivos.</p>
+                        <p><strong>Técnica:</strong> fuerte contraste rítmico entre edición frenética y movimientos serenos. Iluminación dramática y escenarios inmersivos.</p>
                     </div>
                     <div class="card-text en">
-                        <p>The unbreakable calm of an imposing warrior in the pre-combat tension.</p>
-                        <p><br><strong>Technique:</strong> Strong rhythmic contrast between frantic editing and serene movements. Dramatic lighting and immersive settings.</p>
+                        <p>The unbreakable calm of an imposing warrior in the tension before combat.</p>
+                        <p><strong>Technique:</strong> strong rhythmic contrast between frantic editing and serene movement. Dramatic lighting and immersive settings.</p>
                     </div>
-                    <a href="https://youtu.be/cr6pFpzVu3k" target="_blank" class="watch-btn es">Ver Reel</a>
-                    <a href="https://youtu.be/cr6pFpzVu3k" target="_blank" class="watch-btn en">Watch Reel</a>
+                    <a href="https://youtu.be/cr6pFpzVu3k" target="_blank" rel="noopener" class="watch-btn"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></a>
                 </div>
             </div>
 
             <!-- 5. CHOOSE YOUR STYLE -->
-            <div class="card">
+            <div class="card reveal">
                 <div class="slider-container">
                     <span class="card-tag es">Reel de Moda</span>
                     <span class="card-tag en">Fashion Reel</span>
-                    <button class="slider-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+                    <button class="slider-btn prev" onclick="moveSlide(this, -1)" aria-label="Anterior">&#10094;</button>
+                    <button class="slider-btn next" onclick="moveSlide(this, 1)" aria-label="Siguiente">&#10095;</button>
                     <div class="slider-wrapper">
-                        <img src="Chica%2070.jpeg" class="slide active" alt="Style">
-                        <img src="MET%20gala.jpeg" class="slide" alt="Style">
-                        <img src="Electrica.jpeg" class="slide" alt="Style">
-                        <img src="Chica%20vestido.png" class="slide" alt="Style">
+                        <img src="Chica%2070.jpeg" class="slide active" alt="Choose Your Style" loading="lazy">
+                        <img src="MET%20gala.jpeg" class="slide" alt="Choose Your Style" loading="lazy">
+                        <img src="Electrica.jpeg" class="slide" alt="Choose Your Style" loading="lazy">
+                        <img src="Chica%20vestido.png" class="slide" alt="Choose Your Style" loading="lazy">
                     </div>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">CHOOSE YOUR STYLE</h3>
                     <div class="card-text es">
-                        <p> Reel publicitario que explora la multiplicidad de la vida, demostrando que la verdadera identidad es versátil y siempre auténtica.</p>
-                        <p><br><strong>Ejecución:</strong> Transiciones dinámicas fluidas para una exploración estética constante.</p>
+                        <p>Reel publicitario que explora la multiplicidad de la vida y demuestra que la verdadera identidad es versátil y siempre auténtica.</p>
+                        <p><strong>Ejecución:</strong> transiciones dinámicas y fluidas para una exploración estética constante.</p>
                     </div>
                     <div class="card-text en">
-                        <p> Advertising reel exploring life's multiplicity, proving that true identity is versatile and always authentic.</p>
-                        <p><br><strong>Execution:</strong> Fluid dynamic transitions for constant aesthetic exploration.</p>
+                        <p>Advertising reel exploring life's multiplicity, proving that true identity is versatile and always authentic.</p>
+                        <p><strong>Execution:</strong> fluid, dynamic transitions for constant aesthetic exploration.</p>
                     </div>
-                    <a href="https://youtu.be/c0Q_Xpwpi2w" target="_blank" class="watch-btn es">Ver Reel</a>
-                    <a href="https://youtu.be/c0Q_Xpwpi2w" target="_blank" class="watch-btn en">Watch Reel</a>
+                    <a href="https://youtu.be/c0Q_Xpwpi2w" target="_blank" rel="noopener" class="watch-btn"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></a>
                 </div>
             </div>
-
         </div>
     </section>
 
+    <!-- ===== FOOTER ===== -->
     <footer>
-        <h2 class="es">Hagamos tu próxima campaña.</h2>
-        <h2 class="en">Let's build your next campaign.</h2>
-        <p class="es">RUVI STUDIO</p>
-        <p class="en">RUVI STUDIO</p>
-        <div>
+        <h2 class="es">Hagamos que tu próxima campaña rinda.</h2>
+        <h2 class="en">Let's make your next campaign perform.</h2>
+        <p class="es">Contanos qué necesitás y te respondemos con una propuesta.</p>
+        <p class="en">Tell us what you need and we'll get back with a proposal.</p>
+        <div class="links">
             <a href="mailto:info@ruvistudio.com">info@ruvistudio.com</a>
-            <a href="https://ruvistudio.com">ruvistudio.com</a>
+            <a href="https://instagram.com/ruvi.ai" target="_blank" rel="noopener">@ruvi.ai</a>
+            <a href="real-estate.html">RUVI Real Estate</a>
         </div>
+        <p class="legal">© RUVI STUDIO</p>
     </footer>
 
-    <script>
-        // Lógica de Idiomas
-        function toggleLang() {
-            const htmlTag = document.documentElement;
-            const btn = document.getElementById('langBtn');
-            
-            if (htmlTag.getAttribute('lang') === 'es') {
-                htmlTag.setAttribute('lang', 'en');
-                btn.textContent = 'ES';
-            } else {
-                htmlTag.setAttribute('lang', 'es');
-                btn.textContent = 'EN';
-            }
-        }
-
-        // Lógica de Sliders
-        function moveSlide(btn, direction) {
-            const container = btn.parentElement.querySelector('.slider-wrapper');
-            const slides = container.querySelectorAll('.slide');
-            let activeIndex = 0;
-            
-            slides.forEach((slide, index) => {
-                if (slide.classList.contains('active')) {
-                    activeIndex = index;
-                    slide.classList.remove('active');
-                }
-            });
-            
-            let newIndex = activeIndex + direction;
-            if (newIndex < 0) newIndex = slides.length - 1;
-            if (newIndex >= slides.length) newIndex = 0;
-            
-            slides[newIndex].classList.add('active');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
