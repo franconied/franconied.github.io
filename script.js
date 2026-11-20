@@ -55,10 +55,21 @@ function openVideo(src) {
     const v = document.getElementById('modalVideo');
     if (!modal || !v) return;
     document.querySelectorAll('video[data-autoplay]').forEach(x => x.pause());
-    v.src = src;
+    const yt = document.getElementById('ytFrame');
+    if (src.startsWith('yt:')) {
+        // Videos de YouTube: se ven dentro de la página
+        v.style.display = 'none';
+        yt.style.display = 'block';
+        yt.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + src.slice(3) +
+            '?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+    } else {
+        yt.style.display = 'none';
+        v.style.display = '';
+        v.src = src;
+        v.play().catch(() => {});
+    }
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
-    v.play().catch(() => {});
 }
 function closeVideo() {
     const modal = document.getElementById('videoModal');
@@ -67,6 +78,8 @@ function closeVideo() {
     v.pause();
     v.removeAttribute('src');
     v.load();
+    const yt = document.getElementById('ytFrame');
+    if (yt) yt.innerHTML = '';
     modal.classList.remove('open');
     document.body.style.overflow = '';
 }

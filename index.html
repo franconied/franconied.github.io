@@ -376,7 +376,7 @@
                         <p>A cinematic staging featuring an extravagant diver immersed in tense situations that end in absurdly mundane actions.</p>
                         <p><strong>Aesthetics:</strong> hyper-polished, where the unreal and the mundane collide.</p>
                     </div>
-                    <a href="https://youtu.be/rPnYFZ-M8tg" target="_blank" rel="noopener" class="watch-btn"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></a>
+                    <button type="button" class="watch-btn" onclick="openVideo('yt:rPnYFZ-M8tg')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
                 </div>
             </div>
 
@@ -404,7 +404,7 @@
                         <p>The dynamism of 80s youth gathered around a vibrant, trendy beverage.</p>
                         <p><strong>Format:</strong> fake commercial driven by an original synthetic jingle and strong retro urban aesthetics.</p>
                     </div>
-                    <a href="https://youtu.be/ayEPDruBNKI" target="_blank" rel="noopener" class="watch-btn"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></a>
+                    <button type="button" class="watch-btn" onclick="openVideo('yt:ayEPDruBNKI')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
                 </div>
             </div>
 
@@ -427,7 +427,7 @@
                         <p>A compact drama in a single scene. A piece that travels through deep emotion within a tension-filled situation.</p>
                         <p><strong>Technique:</strong> SFX as the key to setting the mood. A cabin that generates both claustrophobia and release.</p>
                     </div>
-                    <a href="https://youtu.be/eiHfpl1FxrQ" target="_blank" rel="noopener" class="watch-btn"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></a>
+                    <button type="button" class="watch-btn" onclick="openVideo('yt:eiHfpl1FxrQ')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
                 </div>
             </div>
 
@@ -454,7 +454,7 @@
                         <p>The unbreakable calm of an imposing warrior in the tension before combat.</p>
                         <p><strong>Technique:</strong> strong rhythmic contrast between frantic editing and serene movement. Dramatic lighting and immersive settings.</p>
                     </div>
-                    <a href="https://youtu.be/cr6pFpzVu3k" target="_blank" rel="noopener" class="watch-btn"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></a>
+                    <button type="button" class="watch-btn" onclick="openVideo('yt:cr6pFpzVu3k')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
                 </div>
             </div>
 
@@ -482,7 +482,7 @@
                         <p>Advertising reel exploring life's multiplicity, proving that true identity is versatile and always authentic.</p>
                         <p><strong>Execution:</strong> fluid, dynamic transitions for constant aesthetic exploration.</p>
                     </div>
-                    <a href="https://youtu.be/c0Q_Xpwpi2w" target="_blank" rel="noopener" class="watch-btn"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></a>
+                    <button type="button" class="watch-btn" onclick="openVideo('yt:c0Q_Xpwpi2w')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
                 </div>
             </div>
         </div>
@@ -506,6 +506,7 @@
     <div class="video-modal" id="videoModal" onclick="if (event.target === this) closeVideo()">
         <button type="button" class="video-modal-close" onclick="closeVideo()" aria-label="Cerrar">&times;</button>
         <video id="modalVideo" controls playsinline></video>
+        <div class="yt-frame" id="ytFrame"></div>
     </div>
 
     <script src="script.js"></script>
