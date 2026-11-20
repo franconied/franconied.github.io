@@ -140,17 +140,13 @@
 
             <!-- 1. DIVER 1921 -->
             <div class="card reveal">
-                <div class="slider-container">
+                <div class="slider-container video-card" onclick="openVideo('videos/diver.mp4')">
                     <span class="card-tag es">Reel Narrativo</span>
                     <span class="card-tag en">Narrative Reel</span>
-                    <button class="slider-btn prev" onclick="moveSlide(this, -1)" aria-label="Anterior">&#10094;</button>
-                    <button class="slider-btn next" onclick="moveSlide(this, 1)" aria-label="Siguiente">&#10095;</button>
-                    <div class="slider-wrapper">
-                        <img src="Lavanderia.png" class="slide active" alt="Diver 1921" loading="lazy">
-                        <img src="Sushi%20bar.png" class="slide" alt="Diver 1921" loading="lazy">
-                        <img src="Telephone.png" class="slide" alt="Diver 1921" loading="lazy">
-                        <img src="Pasillo.jpeg" class="slide" alt="Diver 1921" loading="lazy">
-                    </div>
+                    <video class="card-video" data-autoplay muted loop playsinline preload="metadata" poster="Lavanderia.png">
+                        <source src="videos/diver.mp4" type="video/mp4">
+                    </video>
+                    <span class="play-icon" aria-hidden="true">&#9654;</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">DIVER 1921</h3>
@@ -162,23 +158,19 @@
                         <p>A cinematic staging featuring an extravagant diver immersed in tense situations that end in absurdly mundane actions.</p>
                         <p><strong>Aesthetics:</strong> hyper-polished, where the unreal and the mundane collide.</p>
                     </div>
-                    <button type="button" class="watch-btn" onclick="openVideo('yt:rPnYFZ-M8tg')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
+                    <button type="button" class="watch-btn" onclick="openVideo('videos/diver.mp4')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
                 </div>
             </div>
 
             <!-- 2. VUZ SODA -->
             <div class="card reveal">
-                <div class="slider-container">
+                <div class="slider-container video-card" onclick="openVideo('videos/vuz.mp4')">
                     <span class="card-tag es">Reel Comercial</span>
                     <span class="card-tag en">Commercial Reel</span>
-                    <button class="slider-btn prev" onclick="moveSlide(this, -1)" aria-label="Anterior">&#10094;</button>
-                    <button class="slider-btn next" onclick="moveSlide(this, 1)" aria-label="Siguiente">&#10095;</button>
-                    <div class="slider-wrapper">
-                        <img src="Vuz%20Parlante.jpg" class="slide active" alt="VUZ Soda" loading="lazy">
-                        <img src="Vuz%20Skate.jpg" class="slide" alt="VUZ Soda" loading="lazy">
-                        <img src="Vuz%20Chico.jpg" class="slide" alt="VUZ Soda" loading="lazy">
-                        <img src="Vuz%20Boliche.jpg" class="slide" alt="VUZ Soda" loading="lazy">
-                    </div>
+                    <video class="card-video" data-autoplay muted loop playsinline preload="metadata" poster="Vuz%20Parlante.jpg">
+                        <source src="videos/vuz.mp4" type="video/mp4">
+                    </video>
+                    <span class="play-icon" aria-hidden="true">&#9654;</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">VUZ SODA</h3>
@@ -190,18 +182,19 @@
                         <p>The dynamism of 80s youth gathered around a vibrant, trendy beverage.</p>
                         <p><strong>Format:</strong> fake commercial driven by an original synthetic jingle and strong retro urban aesthetics.</p>
                     </div>
-                    <button type="button" class="watch-btn" onclick="openVideo('yt:ayEPDruBNKI')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
+                    <button type="button" class="watch-btn" onclick="openVideo('videos/vuz.mp4')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
                 </div>
             </div>
 
             <!-- 3. HUSTON -->
             <div class="card reveal">
-                <div class="slider-container">
+                <div class="slider-container video-card" onclick="openVideo('videos/huston.mp4')">
                     <span class="card-tag es">Reel Cinemático</span>
                     <span class="card-tag en">Cinematic Reel</span>
-                    <div class="slider-wrapper">
-                        <img src="Astronauta.jpg" class="slide active" alt="Huston" loading="lazy">
-                    </div>
+                    <video class="card-video" data-autoplay muted loop playsinline preload="metadata" poster="Astronauta.jpg">
+                        <source src="videos/huston.mp4" type="video/mp4">
+                    </video>
+                    <span class="play-icon" aria-hidden="true">&#9654;</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">HUSTON</h3>
@@ -213,22 +206,19 @@
                         <p>A compact drama in a single scene. A piece that travels through deep emotion within a tension-filled situation.</p>
                         <p><strong>Technique:</strong> SFX as the key to setting the mood. A cabin that generates both claustrophobia and release.</p>
                     </div>
-                    <button type="button" class="watch-btn" onclick="openVideo('yt:eiHfpl1FxrQ')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
+                    <button type="button" class="watch-btn" onclick="openVideo('videos/huston.mp4')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
                 </div>
             </div>
 
             <!-- 4. SAMURAI -->
             <div class="card reveal">
-                <div class="slider-container">
+                <div class="slider-container video-card" onclick="openVideo('videos/samurai.mp4')">
                     <span class="card-tag es">Reel Cinemático</span>
                     <span class="card-tag en">Cinematic Reel</span>
-                    <button class="slider-btn prev" onclick="moveSlide(this, -1)" aria-label="Anterior">&#10094;</button>
-                    <button class="slider-btn next" onclick="moveSlide(this, 1)" aria-label="Siguiente">&#10095;</button>
-                    <div class="slider-wrapper">
-                        <img src="SAMURAI%20CASCO.jpeg" class="slide active" alt="Samurai" loading="lazy">
-                        <img src="Samurai%20smoking.jpg" class="slide" alt="Samurai" loading="lazy">
-                        <img src="Sitting%20Samurai.jpeg" class="slide" alt="Samurai" loading="lazy">
-                    </div>
+                    <video class="card-video" data-autoplay muted loop playsinline preload="metadata" poster="SAMURAI%20CASCO.jpeg">
+                        <source src="videos/samurai.mp4" type="video/mp4">
+                    </video>
+                    <span class="play-icon" aria-hidden="true">&#9654;</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">SAMURAI</h3>
@@ -240,23 +230,19 @@
                         <p>The unbreakable calm of an imposing warrior in the tension before combat.</p>
                         <p><strong>Technique:</strong> strong rhythmic contrast between frantic editing and serene movement. Dramatic lighting and immersive settings.</p>
                     </div>
-                    <button type="button" class="watch-btn" onclick="openVideo('yt:cr6pFpzVu3k')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
+                    <button type="button" class="watch-btn" onclick="openVideo('videos/samurai.mp4')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
                 </div>
             </div>
 
             <!-- 5. CHOOSE YOUR STYLE -->
             <div class="card reveal">
-                <div class="slider-container">
+                <div class="slider-container video-card" onclick="openVideo('videos/cys.mp4')">
                     <span class="card-tag es">Reel de Moda</span>
                     <span class="card-tag en">Fashion Reel</span>
-                    <button class="slider-btn prev" onclick="moveSlide(this, -1)" aria-label="Anterior">&#10094;</button>
-                    <button class="slider-btn next" onclick="moveSlide(this, 1)" aria-label="Siguiente">&#10095;</button>
-                    <div class="slider-wrapper">
-                        <img src="Chica%2070.jpeg" class="slide active" alt="Choose Your Style" loading="lazy">
-                        <img src="MET%20gala.jpeg" class="slide" alt="Choose Your Style" loading="lazy">
-                        <img src="Electrica.jpeg" class="slide" alt="Choose Your Style" loading="lazy">
-                        <img src="Chica%20vestido.png" class="slide" alt="Choose Your Style" loading="lazy">
-                    </div>
+                    <video class="card-video" data-autoplay muted loop playsinline preload="metadata" poster="Chica%2070.jpeg">
+                        <source src="videos/cys.mp4" type="video/mp4">
+                    </video>
+                    <span class="play-icon" aria-hidden="true">&#9654;</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">CHOOSE YOUR STYLE</h3>
@@ -268,7 +254,7 @@
                         <p>Advertising reel exploring life's multiplicity, proving that true identity is versatile and always authentic.</p>
                         <p><strong>Execution:</strong> fluid, dynamic transitions for constant aesthetic exploration.</p>
                     </div>
-                    <button type="button" class="watch-btn" onclick="openVideo('yt:c0Q_Xpwpi2w')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
+                    <button type="button" class="watch-btn" onclick="openVideo('videos/cys.mp4')"><span class="es">Ver Reel</span><span class="en">Watch Reel</span></button>
                 </div>
             </div>
         </div>
