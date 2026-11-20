@@ -48,3 +48,26 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
     }
 });
+
+// --- Reproductor a pantalla completa (con sonido) ---
+function openVideo(src) {
+    const modal = document.getElementById('videoModal');
+    const v = document.getElementById('modalVideo');
+    if (!modal || !v) return;
+    document.querySelectorAll('video[data-autoplay]').forEach(x => x.pause());
+    v.src = src;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    v.play().catch(() => {});
+}
+function closeVideo() {
+    const modal = document.getElementById('videoModal');
+    const v = document.getElementById('modalVideo');
+    if (!modal || !v) return;
+    v.pause();
+    v.removeAttribute('src');
+    v.load();
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeVideo(); });
